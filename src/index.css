@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 60% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 60% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 12%;
+
+    /* Primary = Teal del logo */
+    --primary: 195 70% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary = Navy oscuro del logo */
+    --secondary: 210 65% 17%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 200 20% 96%;
+    --muted-foreground: 210 15% 46%;
+
+    --accent: 195 65% 92%;
+    --accent-foreground: 210 65% 17%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 195 70% 40%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 195 70% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
+
+@layer utilities {
+
+  /* Colores del logo */
+  .text-teal {
+    color: #1E8BAA;
+  }
+
+  .text-teal-light {
+    color: #40B8CE;
+  }
+
+  .text-teal-dark {
+    color: #145F78;
+  }
+
+  .fill-teal {
+    fill: #1E8BAA;
+  }
+
+  .fill-teal-light {
+    fill: #40B8CE;
+  }
+
+  /* Logo gradient (dark navy → teal) */
+  .bg-logo-gradient {
+    background: linear-gradient(135deg, #0D2A48 0%, #1A4A70 45%, #1E8BAA 100%);
+  }
+
+  /* Hero gradient matches logo palette */
+  .bg-hero-gradient {
+    background: linear-gradient(135deg, #0A1E35 0%, #0D2A48 35%, #1A4A70 70%, #1E6B85 100%);
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(64, 184, 206, 0.12) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+}
