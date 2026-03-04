@@ -1,4 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+
+/* ─────────────── Reveal Hook ─────────────── */
+function useReveal() {
+  const ref = useRef<HTMLElement | null>(null);
+  const cb = useCallback((node: HTMLElement | null) => {
+    if (!node) return;
+    ref.current = node;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } },
+      { threshold: 0.12 }
+    );
+    observer.observe(node);
+  }, []);
+  return cb;
+}
 import {
   Star, Car, HeartPulse, Umbrella, Home, Shield, Tag, Search,
   CheckCircle, MapPin, Phone, MessageCircle, Heart, ChevronRight,
@@ -109,6 +124,20 @@ export default function Index() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  /* ── Reveal on Scroll ── */
+  useEffect(() => {
+    const els = document.querySelectorAll<HTMLElement>(".reveal");
+    if (!els.length) return;
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
+      }),
+      { threshold: 0.15 }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
 
@@ -213,18 +242,6 @@ export default function Index() {
           HERO
       ══════════════════════════════════════ */}
       <main>
-        <style>{`
-          .animate-scroll {
-            animation: scroll 30s linear infinite;
-          }
-          .animate-scroll:hover {
-            animation-play-state: paused;
-          }
-          @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-        `}</style>
         <section
           id="inicio"
           aria-labelledby="hero-heading"
@@ -236,31 +253,32 @@ export default function Index() {
             loop
             muted
             playsInline
+            poster={logoIcon}
             className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 mix-blend-lighten"
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
 
-          {/* Profesional subtle gradient overlay */}
+          {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-tr from-[#020B16] via-[#0A1F35]/90 to-[#103154]/70 z-0" />
+
+          {/* Lightweight static glow — replaces the costly SVG blur+spin */}
+          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-teal/10 blur-[80px] pointer-events-none hidden md:block" />
+          <div className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full bg-teal/5 blur-[60px] pointer-events-none hidden md:block" />
 
           <div className="absolute inset-0 z-0 opacity-20 mix-blend-screen pointer-events-none overflow-hidden">
             <svg
-              className="absolute w-full h-full top-0 left-0 origin-center animate-[spin_60s_linear_infinite]"
+              className="absolute w-full h-full top-0 left-0"
               viewBox="0 0 1000 1000"
               xmlns="http://www.w3.org/2000/svg"
             >
               <defs>
                 <linearGradient id="fluid-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#1E8BAA" stopOpacity="0.4" />
-                  <stop offset="50%" stopColor="#7DD8E8" stopOpacity="0.1" />
+                  <stop offset="0%" stopColor="#1E8BAA" stopOpacity="0.3" />
                   <stop offset="100%" stopColor="#0D2A48" stopOpacity="0" />
                 </linearGradient>
-                <filter id="fluid-blur">
-                  <feGaussianBlur stdDeviation="60" />
-                </filter>
               </defs>
-              <g filter="url(#fluid-blur)">
+              <g>
                 <circle cx="500" cy="300" r="280" fill="url(#fluid-grad)" className="animate-[pulse_10s_ease-in-out_infinite_alternate]" />
                 <circle cx="200" cy="600" r="200" fill="url(#fluid-grad)" className="animate-[pulse_12s_ease-in-out_infinite_alternate-reverse]" style={{ animationDelay: '2s' }} />
                 <circle cx="800" cy="700" r="250" fill="url(#fluid-grad)" className="animate-[pulse_14s_ease-in-out_infinite_alternate]" style={{ animationDelay: '5s' }} />
@@ -272,12 +290,12 @@ export default function Index() {
           <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-20 md:pt-28 md:pb-32 grid lg:grid-cols-2 gap-8 md:gap-12 items-center w-full">
             {/* Left content */}
             <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-1.5 text-white/90 text-[10px] md:text-[11px] font-bold tracking-widest uppercase mb-6 md:mb-8">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-1.5 text-white/90 text-[10px] md:text-[11px] font-bold tracking-widest uppercase mb-6 md:mb-8 hero-animate">
                 <span className="w-1.5 h-1.5 rounded-full bg-teal shadow-[0_0_8px_rgba(20,184,166,0.8)] animate-pulse" />
                 Corredor SBS Nro. 4503 — Desde 2017
               </div>
 
-              <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-[54px] font-bold text-white leading-tight mb-5 md:mb-6 tracking-tight">
+              <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-[54px] font-bold text-white leading-tight mb-5 md:mb-6 tracking-tight hero-animate hero-animate-delay-1">
                 Tu seguro ideal,<br />
                 <span className="text-teal font-extrabold relative inline-block">
                   al mejor precio
@@ -288,11 +306,11 @@ export default function Index() {
                 del mercado
               </h1>
 
-              <p className="text-slate-300 text-base md:text-lg mb-8 md:mb-10 leading-relaxed font-normal">
+              <p className="text-slate-300 text-base md:text-lg mb-8 md:mb-10 leading-relaxed font-normal hero-animate hero-animate-delay-2">
                 <strong className="text-white font-medium">Fabio Vadillo</strong>, Corredor de Seguros certificado SBS en <strong className="text-white font-medium">Lima, Perú</strong>. Más de 20 años comparando <strong className="text-white font-medium">Rímac, Pacífico y Mapfre</strong> para encontrar el seguro vehicular, de salud, vida o hogar perfecto para ti — sin costo adicional.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-10 md:mb-14">
+              <div className="flex flex-col sm:flex-row gap-4 mb-10 md:mb-14 hero-animate hero-animate-delay-3">
                 <Button
                   size="lg"
                   asChild
@@ -482,7 +500,7 @@ export default function Index() {
           <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-teal/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 z-0" />
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 reveal fade-up">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-1.5 text-white/90 text-[11px] font-bold tracking-widest uppercase mb-8">
                 <Shield className="h-3.5 w-3.5 text-teal" />
                 ¿Por qué un Broker?
@@ -538,7 +556,7 @@ export default function Index() {
         ══════════════════════════════════════ */}
         <section id="seguros" aria-labelledby="seguros-heading" className="py-16 md:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 reveal fade-up">
               <span className="inline-flex items-center gap-2 bg-teal/10 text-teal-dark text-[11px] font-extrabold tracking-widest uppercase px-4 py-2 rounded-full mb-5">
                 <Zap className="h-3.5 w-3.5 text-teal" />
                 Nuestros Servicios
@@ -550,10 +568,10 @@ export default function Index() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              {SERVICES.map((item) => (
+              {SERVICES.map((item, idx) => (
                 <article
                   key={item.title}
-                  className={`relative border-none bg-slate-50 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden rounded-2xl flex flex-row sm:flex-col`}
+                  className={`reveal fade-up delay-${(idx + 1) * 100} card-glow relative border-none bg-slate-50 shadow-sm overflow-hidden rounded-2xl flex flex-row sm:flex-col`}
                 >
                   {item.tag && (
                     <span className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-gold text-[#07192C] text-[9px] sm:text-[10px] font-extrabold px-2 py-0.5 rounded-full z-10">

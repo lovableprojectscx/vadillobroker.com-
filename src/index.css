@@ -107,4 +107,136 @@
     background-image: radial-gradient(circle at 1px 1px, rgba(64, 184, 206, 0.12) 1px, transparent 0);
     background-size: 40px 40px;
   }
+
+  /* ═══════════════════════════════════════
+     REVEAL ON SCROLL — Animation System
+  ═══════════════════════════════════════ */
+  .reveal {
+    opacity: 0;
+    transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+  }
+
+  .reveal.fade-up {
+    transform: translateY(36px);
+  }
+
+  .reveal.fade-left {
+    transform: translateX(-36px);
+  }
+
+  .reveal.fade-right {
+    transform: translateX(36px);
+  }
+
+  .reveal.scale-in {
+    transform: scale(0.93);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Stagger Delays */
+  .delay-100 {
+    transition-delay: 100ms;
+  }
+
+  .delay-200 {
+    transition-delay: 200ms;
+  }
+
+  .delay-300 {
+    transition-delay: 300ms;
+  }
+
+  .delay-400 {
+    transition-delay: 400ms;
+  }
+
+  .delay-500 {
+    transition-delay: 500ms;
+  }
+
+  .delay-600 {
+    transition-delay: 600ms;
+  }
+
+  /* Respect user preference */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* ═══════════════════════════════════════
+     HERO — Text fade on load
+  ═══════════════════════════════════════ */
+  .hero-animate {
+    animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-animate-delay-1 {
+    animation-delay: 0.15s;
+  }
+
+  .hero-animate-delay-2 {
+    animation-delay: 0.3s;
+  }
+
+  .hero-animate-delay-3 {
+    animation-delay: 0.5s;
+  }
+
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ═══════════════════════════════════════
+     SCROLL MARQUEE (Testimonios)
+  ═══════════════════════════════════════ */
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ═══════════════════════════════════════
+     CARD HOVER GLOW
+  ═══════════════════════════════════════ */
+  .card-glow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-glow:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px -10px rgba(30, 139, 170, 0.2);
+  }
 }
