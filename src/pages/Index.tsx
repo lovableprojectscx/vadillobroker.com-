@@ -396,75 +396,80 @@ export default function Index() {
             <p className="text-center text-[10px] sm:text-[11px] font-extrabold tracking-widest text-[#94A3B8] uppercase mb-6">
               Comparamos las mejores aseguradoras del Perú para ti
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-14 pb-4">
-              {/* Original 5 — favicon API works correctly for these */}
-              {[
-                { name: "RÍMAC", domain: "rimac.com" },
-                { name: "PACÍFICO", domain: "pacifico.com.pe" },
-                { name: "MAPFRE", domain: "mapfre.com" },
-                { name: "LA POSITIVA", domain: "lapositiva.com.pe" },
-                { name: "SANITAS", domain: "sanitasperu.com" },
-              ].map(({ name, domain }) => (
-                <div key={name} className="flex items-center gap-2 group cursor-default">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white overflow-hidden shadow-sm border border-gray-100 group-hover:border-teal/30 group-hover:shadow-md transition-all duration-300 grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 flex-shrink-0">
-                    <img
-                      src={`https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=64`}
-                      alt={`Seguro ${name} en Lima Perú — Vadillo Broker`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+            {/* Marquee Container */}
+            <div className="relative flex overflow-hidden w-full group mask-image-linear">
+              {[0, 1].map((idx) => (
+                <div key={idx} aria-hidden={idx === 1} className="flex animate-marquee shrink-0 items-center gap-8 sm:gap-16 px-4 sm:px-8 pb-4">
+                  {/* Original 5 — favicon API works correctly for these */}
+                  {[
+                    { name: "RÍMAC", domain: "rimac.com" },
+                    { name: "PACÍFICO", domain: "pacifico.com.pe" },
+                    { name: "MAPFRE", domain: "mapfre.com" },
+                    { name: "LA POSITIVA", domain: "lapositiva.com.pe" },
+                    { name: "SANITAS", domain: "sanitasperu.com" },
+                  ].map(({ name, domain }) => (
+                    <div key={name} className="flex items-center gap-2 group/logo cursor-default">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white overflow-hidden shadow-sm border border-gray-100 group-hover/logo:border-teal/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-50 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0">
+                        <img
+                          src={`https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=64`}
+                          alt={`Seguro ${name} en Lima Perú — Vadillo Broker`}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover/logo:text-navy transition-colors duration-300 tracking-wide">
+                        {name}
+                      </span>
+                    </div>
+                  ))}
+
+                  {/* QUALITAS — Logo desde versión pública accesible */}
+                  <div className="flex items-center gap-2 group/logo cursor-default">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover/logo:border-[#7B2D8B]/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-50 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1 relative">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Logo_de_Qu%C3%A1litas.svg/512px-Logo_de_Qu%C3%A1litas.svg.png"
+                        alt="Seguro Qualitas en Lima Perú — Vadillo Broker"
+                        className="w-full h-full object-contain absolute inset-0 z-10 bg-white"
+                        loading="lazy"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                        }}
+                      />
+                      {/* Fallback SVG if img fails */}
+                      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-[85%] h-[85%] absolute z-0">
+                        <circle cx="52" cy="40" r="26" fill="none" stroke="#8B2FA8" strokeWidth="14" />
+                        <line x1="30" y1="72" x2="68" y2="62" stroke="#8B2FA8" strokeWidth="9" strokeLinecap="round" />
+                        <polygon points="68,62 80,80 58,75" fill="#8B2FA8" />
+                      </svg>
+                    </div>
+                    <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover/logo:text-navy transition-colors duration-300 tracking-wide">QUALITAS</span>
                   </div>
-                  <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover:text-navy transition-colors duration-300 tracking-wide">
-                    {name}
-                  </span>
+
+                  {/* AUGUSTAR — Logo desde URL proporcionada con SVG fallback */}
+                  <div className="flex items-center gap-2 group/logo cursor-default pr-4 sm:pr-8">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover/logo:border-[#F15A24]/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-50 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1 relative">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZLnDxG8VsCfSWKmKgiplUy4h9p_dTetVJew&s"
+                        alt="Seguro Augustar en Lima Perú — Vadillo Broker"
+                        className="w-full h-full object-contain absolute inset-0 z-10 bg-white"
+                        loading="lazy"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                        }}
+                      />
+                      {/* Fallback SVG if img fails */}
+                      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-[85%] h-[85%] absolute z-0">
+                        {[0, 60, 120, 180, 240, 300].map((deg) => (
+                          <g key={deg} transform={`rotate(${deg} 50 50)`}>
+                            <path d="M50 50 C58 35, 78 40, 75 22 C72 5, 50 5, 45 25 C42 38, 45 45, 50 50Z" fill="#F15A24" />
+                          </g>
+                        ))}
+                      </svg>
+                    </div>
+                    <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover/logo:text-navy transition-colors duration-300 tracking-wide">AUGUSTAR</span>
+                  </div>
                 </div>
               ))}
-
-              {/* QUALITAS — Logo desde versión pública accesible */}
-              <div className="flex items-center gap-2 group cursor-default">
-                <div id="qualitas-container" className="w-10 h-10 sm:w-12 sm:h-12 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover:border-[#7B2D8B]/30 group-hover:shadow-md transition-all duration-300 grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1 relative">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Logo_de_Qu%C3%A1litas.svg/512px-Logo_de_Qu%C3%A1litas.svg.png"
-                    alt="Seguro Qualitas en Lima Perú — Vadillo Broker"
-                    className="w-full h-full object-contain absolute inset-0 z-10 bg-white"
-                    loading="lazy"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                  {/* Fallback SVG if img fails */}
-                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-[85%] h-[85%] absolute z-0">
-                    <circle cx="52" cy="40" r="26" fill="none" stroke="#8B2FA8" strokeWidth="14" />
-                    <line x1="30" y1="72" x2="68" y2="62" stroke="#8B2FA8" strokeWidth="9" strokeLinecap="round" />
-                    <polygon points="68,62 80,80 58,75" fill="#8B2FA8" />
-                  </svg>
-                </div>
-                <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover:text-navy transition-colors duration-300 tracking-wide">QUALITAS</span>
-              </div>
-
-              {/* AUGUSTAR — Logo desde URL proporcionada con SVG fallback */}
-              <div className="flex items-center gap-2 group cursor-default">
-                <div id="augustar-container" className="w-10 h-10 sm:w-12 sm:h-12 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover:border-[#F15A24]/30 group-hover:shadow-md transition-all duration-300 grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1 relative">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZLnDxG8VsCfSWKmKgiplUy4h9p_dTetVJew&s"
-                    alt="Seguro Augustar en Lima Perú — Vadillo Broker"
-                    className="w-full h-full object-contain absolute inset-0 z-10 bg-white"
-                    loading="lazy"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                  {/* Fallback SVG if img fails */}
-                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-[85%] h-[85%] absolute z-0">
-                    {[0, 60, 120, 180, 240, 300].map((deg) => (
-                      <g key={deg} transform={`rotate(${deg} 50 50)`}>
-                        <path d="M50 50 C58 35, 78 40, 75 22 C72 5, 50 5, 45 25 C42 38, 45 45, 50 50Z" fill="#F15A24" />
-                      </g>
-                    ))}
-                  </svg>
-                </div>
-                <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover:text-navy transition-colors duration-300 tracking-wide">AUGUSTAR</span>
-              </div>
             </div>
           </div>
         </section>

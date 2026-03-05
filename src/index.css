@@ -239,4 +239,16 @@
     transform: translateY(-6px);
     box-shadow: 0 20px 48px -10px rgba(30, 139, 170, 0.2);
   }
+
+  /* ═══════════════════════════════════════
+     MARQUEE MASKS & UTILS
+  ═══════════════════════════════════════ */
+  .mask-image-linear {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  }
+
+  .group:hover .animate-marquee {
+    animation-play-state: paused;
+  }
 }
