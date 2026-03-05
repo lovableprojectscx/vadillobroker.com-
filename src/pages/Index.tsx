@@ -37,19 +37,19 @@ const PHONE = "51997239181";
 const WA = (msg: string) => `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
 
 // Mensajes personalizados por contexto
-const WHATSAPP = WA("¡Hola Fabio! Quisiera recibir asesoría gratuita sobre seguros. ¿Podría ayudarme?");
+const WHATSAPP = WA("¡Hola Fabio! Quisiera recibir asesoría profesional sobre seguros. ¿Podría ayudarme?");
 const WA_HERO = WA("¡Hola Fabio! Vi tu web y me interesa conocer mis opciones de seguros. ¿Podemos hablar?");
-const WA_VEHICULAR = WA("¡Hola Fabio! Me interesa cotizar un seguro vehicular / SOAT. ¿Cuáles son las opciones disponibles?");
-const WA_SALUD = WA("¡Hola Fabio! Quisiera información sobre planes de salud / EPS para mí o mi familia. ¿Puedes ayudarme?");
-const WA_VIDA = WA("¡Hola Fabio! Me interesa cotizar un seguro de vida. ¿Qué opciones tienes disponibles?");
-const WA_HOGAR = WA("¡Hola Fabio! Quisiera cotizar un seguro de hogar. ¿Cuáles son las coberturas que manejas?");
+const WA_VEHICULAR = WA("¡Hola Fabio! Me interesa consultar sobre un seguro vehicular. ¿Cuáles son las mejores opciones?");
+const WA_SALUD = WA("¡Hola Fabio! Quisiera información sobre planes de salud para mí o mi familia. ¿Puedes ayudarme?");
+const WA_VIDA = WA("¡Hola Fabio! Me interesa consultar sobre un seguro de vida. ¿Qué opciones tienes disponibles?");
+const WA_HOGAR = WA("¡Hola Fabio! Quisiera consultar sobre un seguro de hogar. ¿Cuáles son las coberturas que manejas?");
 const WA_INMOBILIARIA = WA("¡Hola Fabio! Me interesa el servicio de inmobiliaria. ¿Podemos coordinar una consulta?");
 const WA_CONTACTO = WA("¡Hola Fabio! Me comunico desde tu web. Quisiera recibir más información sobre tus servicios.");
 
 // Mapa de mensajes por servicio para los botones individuales
 const WA_SERVICIOS: Record<string, string> = {
-  "Vehicular / SOAT": WA_VEHICULAR,
-  "Salud / EPS": WA_SALUD,
+  "Seguro Vehicular": WA_VEHICULAR,
+  "Seguro de Salud": WA_SALUD,
   "Seguro de Vida": WA_VIDA,
   "Seguro de Hogar": WA_HOGAR,
 };
@@ -66,42 +66,42 @@ const NAV_LINKS = [
 ];
 
 const SERVICES = [
-  { icon: Car, title: "Vehicular / SOAT", desc: "Protección total para tu vehículo con Rímac, Pacífico y Mapfre al mejor precio del mercado.", color: "from-blue-500 to-blue-700", bg: "bg-blue-50", border: "hover:border-blue-200", tag: "Más cotizado" },
-  { icon: HeartPulse, title: "Salud / EPS", desc: "Planes de salud integrales para personas, familias y empresas en Lima, Perú.", color: "from-rose-500 to-rose-700", bg: "bg-rose-50", border: "hover:border-rose-200", tag: "" },
+  { icon: Car, title: "Seguro Vehicular", desc: "Protección total para tu vehículo con Rímac, Pacífico y Mapfre con máxima eficacia.", color: "from-blue-500 to-blue-700", bg: "bg-blue-50", border: "hover:border-blue-200", tag: "Más solicitado" },
+  { icon: HeartPulse, title: "Seguro de Salud", desc: "Planes de salud integrales para personas, familias y empresas con el respaldo de las mejores aseguradoras.", color: "from-rose-500 to-rose-700", bg: "bg-rose-50", border: "hover:border-rose-200", tag: "" },
   { icon: Umbrella, title: "Seguro de Vida", desc: "Garantiza el futuro económico de tus seres queridos ante cualquier eventualidad.", color: "from-violet-500 to-violet-700", bg: "bg-violet-50", border: "hover:border-violet-200", tag: "" },
   { icon: Home, title: "Seguro de Hogar", desc: "Cobertura completa contra todo riesgo para proteger tu patrimonio e inmueble.", color: "from-emerald-500 to-emerald-700", bg: "bg-emerald-50", border: "hover:border-emerald-200", tag: "" },
 ];
 
 const ABOUT_FEATURES = [
-  { icon: Award, label: "Corredor Certificado", sublabel: "SBS Nro. 4503" },
+  { icon: Award, label: "Especialista Senior", sublabel: "Seguros e Inmobiliaria" },
   { icon: Clock, label: "Atención 24/7", sublabel: "Siempre disponible" },
-  { icon: TrendingUp, label: "Sin costo extra", sublabel: "Comisión pagada por la aseguradora" },
+  { icon: TrendingUp, label: "Asesoría Senior", sublabel: "Atención personalizada y exclusiva" },
   { icon: Shield, label: "100% Independiente", sublabel: "Trabajamos para ti, no para ellas" },
 ];
 
 const STATS = [
   { value: "20+", label: "Años de experiencia" },
-  { value: "+500", label: "Familias protegidas" },
-  { value: "4", label: "Aseguradoras líderes" },
+  { value: "+200", label: "Familias protegidas" },
+  { value: "10", label: "Aseguradoras líderes" },
   { value: "24/7", label: "Soporte disponible" },
 ];
 
 const WHY_BROKER = [
   { icon: Shield, title: "Defendemos tus intereses", desc: "En caso de siniestro, peleamos por ti frente a la aseguradora para garantizar tu indemnización justa.", badge: "Tu aliado" },
-  { icon: Tag, title: "Mismo precio, más valor", desc: "Pagas exactamente lo mismo que en la aseguradora, pero con soporte VIP y asesoría personalizada 24/7.", badge: "Sin recargo" },
+  { icon: Tag, title: "Respaldo Total", desc: "Recibes asesoría experta y soporte VIP en cada etapa para garantizar que tu protección sea siempre la ideal.", badge: "Tu aliado" },
   { icon: Search, title: "Comparamos por ti", desc: "Analizamos todas las opciones — Rímac, Pacífico, Mapfre — para encontrar la póliza perfecta para tu caso.", badge: "Mercado completo" },
 ];
 
 const TESTIMONIALS = [
-  { name: "Carlos Mendoza", role: "Empresario, Miraflores", text: "Increíble servicio. Me ayudaron a elegir la mejor EPS para mi familia sin papeleos interminables ni letras chicas. Proceso súper ágil.", img: "https://i.pravatar.cc/150?u=carlos" },
-  { name: "Lucía Ramírez", role: "Arquitecta, San Isidro", text: "Tuve un choque y Fabio se encargó de absolutamente todo con la aseguradora. No tuve que preocuparme de nada. ¡Gracias de verdad!", img: "https://i.pravatar.cc/150?u=lucia" },
-  { name: "Diego Fernández", role: "Médico, La Molina", text: "Me ahorraron un 20% en mi seguro de hogar comparando opciones que yo nunca habría conocido. Totalmente recomendable.", img: "https://i.pravatar.cc/150?u=diego" },
+  { name: "Carlos Mendoza", role: "Empresario, Miraflores", text: "Extraordinaria asesoría. Me orientaron para elegir la cobertura ideal para mi familia con total claridad y sin trámites complejos. Proceso impecable.", img: "https://i.pravatar.cc/150?img=11" },
+  { name: "Lucía Ramírez", role: "Arquitecta, San Isidro", text: "Tuve un choque y Fabio se encargó de absolutamente todo con la aseguradora. No tuve que preocuparme de nada. ¡Gracias de verdad!", img: "https://i.pravatar.cc/150?img=26" },
+  { name: "Diego Fernández", role: "Médico, La Molina", text: "Optimizaron mi cobertura significativamente comparando opciones que yo nunca habría conocido. Totalmente recomendable.", img: "https://i.pravatar.cc/150?img=12" },
 ];
 
 const FAQS = [
-  { q: "¿Tiene algún costo extra contratar a través de Fabio Vadillo?", a: "No. El costo del seguro es exactamente el mismo que si fueras directamente a la aseguradora. La comisión la paga la compañía de seguros, no tú." },
+  { q: "¿Cómo funciona la asesoría de Fabio Vadillo?", a: "Recibes un servicio personalizado y experto en la gestión de tus pólizas, asegurando que siempre tengas la protección más eficaz y el respaldo total ante cualquier eventualidad." },
   { q: "¿Qué pasa si tengo un accidente o emergencia de madrugada?", a: "Cuentas con soporte 24/7 vía WhatsApp. Te guío en todo el proceso para que no pierdas tiempo valioso en un momento crítico." },
-  { q: "¿Puedo trasladar mi seguro actual con ustedes?", a: "Sí, puedes trasladar tu póliza vigente sin perder beneficios ni antigüedad. Nos encargamos del proceso completo ante la aseguradora." },
+  { q: "¿Puedo trasladar mi seguro actual con ustedes?", a: "Sí, puedes trasladar tu póliza vigente sin perder beneficios ni antigüedad. Nos encargamos del proceso de optimización completo ante la aseguradora." },
   { q: "¿Es necesario ir a una oficina para contratar?", a: "No. Todo el proceso puede realizarse 100% de forma digital y remota, desde cualquier lugar de Lima o el Perú." },
   { q: "¿Es necesario ser cliente de un banco para el desgravamen?", a: "No necesariamente. Te asesoro sobre las opciones disponibles según tu crédito hipotecario vigente y tu situación particular." },
 ];
@@ -148,11 +148,11 @@ export default function Index() {
         href={WHATSAPP}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contactar a Fabio Vadillo - Broker de Seguros Lima por WhatsApp"
+        aria-label="Contactar a Fabio Vadillo - Seguros e Inmobiliaria en Lima por WhatsApp"
         className="fixed bottom-6 right-4 sm:right-6 z-50 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE57] text-white rounded-full p-4 sm:px-5 sm:py-3.5 shadow-xl shadow-[#25D366]/30 transition-all duration-300 hover:scale-105 font-bold text-sm"
       >
         <MessageCircle className="h-6 w-6 sm:h-5 sm:w-5 flex-shrink-0" />
-        <span className="hidden sm:inline">Cotizar Gratis</span>
+        <span className="hidden sm:inline">Hablar con Fabio</span>
       </a>
 
       {/* ══════════════════════════════════════
@@ -165,14 +165,14 @@ export default function Index() {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
           {/* Logo */}
-          <a href="#inicio" aria-label="Vadillo Broker — Inicio" className="flex items-center gap-3 group">
-            <img src={logoIcon} alt="Logo Vadillo Broker" className="w-10 h-10 object-contain" loading="eager" />
+          <a href="#inicio" aria-label="VADILLOBROKER — Inicio" className="flex items-center gap-3 group">
+            <img src={logoIcon} alt="Logo VADILLOBROKER" className="w-10 h-10 object-contain" loading="eager" />
             <div className="leading-tight">
               <span className={`block text-base font-extrabold tracking-tight transition-colors ${scrolled ? "text-navy" : "text-white"}`}>
-                VADILLO BROKER
+                VADILLOBROKER
               </span>
               <span className="block text-[10px] font-bold text-teal tracking-widest uppercase">
-                Corredor SBS N4503
+                Seguros e Inmobiliaria
               </span>
             </div>
           </a>
@@ -230,7 +230,7 @@ export default function Index() {
             <div className="pt-3">
               <Button className="w-full rounded-full bg-teal text-navy font-extrabold" asChild>
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="h-4 w-4 mr-2" /> Cotizar por WhatsApp
+                  <MessageCircle className="h-4 w-4 mr-2" /> Hablar por WhatsApp
                 </a>
               </Button>
             </div>
@@ -292,22 +292,21 @@ export default function Index() {
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-1.5 text-white/90 text-[10px] md:text-[11px] font-bold tracking-widest uppercase mb-6 md:mb-8 hero-animate">
                 <span className="w-1.5 h-1.5 rounded-full bg-teal shadow-[0_0_8px_rgba(20,184,166,0.8)] animate-pulse" />
-                Corredor SBS Nro. 4503 — Desde 2017
+                Un compromiso personal con su tranquilidad
               </div>
 
               <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-[54px] font-bold text-white leading-tight mb-5 md:mb-6 tracking-tight hero-animate hero-animate-delay-1">
-                Tu seguro ideal,<br />
+                Eficacia y Confianza en<br />
                 <span className="text-teal font-extrabold relative inline-block">
-                  al mejor precio
+                  Seguros e Inmobiliaria
                   <svg className="absolute w-full h-2 md:h-3 -bottom-1 left-0 text-teal/30" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                   </svg>
-                </span><br />
-                del mercado
+                </span>
               </h1>
 
               <p className="text-slate-300 text-base md:text-lg mb-8 md:mb-10 leading-relaxed font-normal hero-animate hero-animate-delay-2">
-                <strong className="text-white font-medium">Fabio Vadillo</strong>, Corredor de Seguros certificado SBS en <strong className="text-white font-medium">Lima, Perú</strong>. Más de 20 años comparando <strong className="text-white font-medium">Rímac, Pacífico y Mapfre</strong> para encontrar el seguro vehicular, de salud, vida o hogar perfecto para ti — sin costo adicional.
+                <strong className="text-white font-medium">Fabio Vadillo</strong>, especialista en <strong className="text-white font-medium">Seguros e Inmobiliaria</strong> en Lima, Perú. Más de 20 años optimizando coberturas con <strong className="text-white font-medium">Rímac, Pacífico y Mapfre</strong> para garantizar tu tranquilidad y respaldo total.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10 md:mb-14 hero-animate hero-animate-delay-3">
@@ -317,7 +316,7 @@ export default function Index() {
                   className="w-full sm:w-auto rounded-full bg-teal hover:bg-teal-hover text-navy font-bold text-base px-8 h-14 shadow-lg shadow-teal/20 transition-all hover:scale-105"
                 >
                   <a href={WA_HERO} target="_blank" rel="noopener noreferrer">
-                    Asesoría Gratuita <ArrowRight className="ml-2 h-5 w-5" />
+                    Asesoría Senior <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
                 <Button
@@ -333,9 +332,9 @@ export default function Index() {
               {/* Hero stats */}
               <div className="grid grid-cols-3 border-t border-white/10 pt-6 md:pt-8 mt-2 divide-x divide-white/10">
                 {[
-                  { value: "+500", label: "Familias protegidas" },
+                  { value: "+200", label: "Familias protegidas" },
                   { value: "20+", label: "Años de experiencia" },
-                  { value: "04", label: "Aseguradoras top" },
+                  { value: "10", label: "Aseguradoras top" },
                 ].map((s, i) => (
                   <div key={s.label} className={i !== 0 ? "pl-3 md:pl-10" : "pr-3 md:pr-10"}>
                     <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-none mb-1 md:mb-1.5 tracking-tight">{s.value}</div>
@@ -356,7 +355,7 @@ export default function Index() {
                     <Star key={i} className="h-4 w-4 fill-gold text-gold drop-shadow-sm" />
                   ))}
                 </div>
-                <div className="text-navy text-sm font-black">+500 clientes</div>
+                <div className="text-navy text-sm font-black">+200 clientes</div>
               </div>
 
               {/* Floating badge — 24/7 */}
@@ -398,6 +397,7 @@ export default function Index() {
               Comparamos las mejores aseguradoras del Perú para ti
             </p>
             <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-14 pb-4">
+              {/* Original 5 — favicon API works correctly for these */}
               {[
                 { name: "RÍMAC", domain: "rimac.com" },
                 { name: "PACÍFICO", domain: "pacifico.com.pe" },
@@ -419,6 +419,52 @@ export default function Index() {
                   </span>
                 </div>
               ))}
+
+              {/* QUALITAS — Logo desde versión pública accesible */}
+              <div className="flex items-center gap-2 group cursor-default">
+                <div id="qualitas-container" className="w-10 h-10 sm:w-12 sm:h-12 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover:border-[#7B2D8B]/30 group-hover:shadow-md transition-all duration-300 grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1 relative">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Logo_de_Qu%C3%A1litas.svg/512px-Logo_de_Qu%C3%A1litas.svg.png"
+                    alt="Seguro Qualitas en Lima Perú — Vadillo Broker"
+                    className="w-full h-full object-contain absolute inset-0 z-10 bg-white"
+                    loading="lazy"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = 'none';
+                    }}
+                  />
+                  {/* Fallback SVG if img fails */}
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-[85%] h-[85%] absolute z-0">
+                    <circle cx="52" cy="40" r="26" fill="none" stroke="#8B2FA8" strokeWidth="14" />
+                    <line x1="30" y1="72" x2="68" y2="62" stroke="#8B2FA8" strokeWidth="9" strokeLinecap="round" />
+                    <polygon points="68,62 80,80 58,75" fill="#8B2FA8" />
+                  </svg>
+                </div>
+                <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover:text-navy transition-colors duration-300 tracking-wide">QUALITAS</span>
+              </div>
+
+              {/* AUGUSTAR — Logo desde URL proporcionada con SVG fallback */}
+              <div className="flex items-center gap-2 group cursor-default">
+                <div id="augustar-container" className="w-10 h-10 sm:w-12 sm:h-12 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover:border-[#F15A24]/30 group-hover:shadow-md transition-all duration-300 grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1 relative">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZLnDxG8VsCfSWKmKgiplUy4h9p_dTetVJew&s"
+                    alt="Seguro Augustar en Lima Perú — Vadillo Broker"
+                    className="w-full h-full object-contain absolute inset-0 z-10 bg-white"
+                    loading="lazy"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = 'none';
+                    }}
+                  />
+                  {/* Fallback SVG if img fails */}
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-[85%] h-[85%] absolute z-0">
+                    {[0, 60, 120, 180, 240, 300].map((deg) => (
+                      <g key={deg} transform={`rotate(${deg} 50 50)`}>
+                        <path d="M50 50 C58 35, 78 40, 75 22 C72 5, 50 5, 45 25 C42 38, 45 45, 50 50Z" fill="#F15A24" />
+                      </g>
+                    ))}
+                  </svg>
+                </div>
+                <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover:text-navy transition-colors duration-300 tracking-wide">AUGUSTAR</span>
+              </div>
             </div>
           </div>
         </section>
@@ -444,18 +490,18 @@ export default function Index() {
               </h2>
               <p className="text-gray-500 mb-4 leading-relaxed">
                 Soy <strong className="text-navy">Fabio Vadillo</strong>, Administrador de Empresas con amplia trayectoria en Banca, Seguros y AFP. Trabajé en{" "}
-                <strong className="text-navy">BCP, Prima AFP, Mapfre y Rímac</strong> hasta 2017, año en el que me establecí como Broker Independiente en Lima.
+                <strong className="text-navy">BCP, Prima AFP, Mapfre y Rímac</strong> hasta 2017, cuando fundé mi propia firma de <strong className="text-navy">Seguros e Inmobiliaria</strong> en Lima.
               </p>
               <p className="text-gray-500 mb-10 leading-relaxed">
-                Hoy represento a más de <strong className="text-navy">500 familias y empresas en Lima</strong> — Miraflores, San Isidro, Surco y más — defendiendo sus intereses y encontrando siempre la mejor póliza en el mercado peruano de seguros.
+                Hoy represento a más de <strong className="text-navy">+200 familias y empresas en Lima</strong> — Miraflores, San Isidro, Surco y más — defendiendo sus intereses y encontrando siempre la mejor póliza en el mercado peruano de seguros.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
                 {[
-                  { icon: Award, label: "Corredor Certificado", sublabel: "SBS Nro. 4503", colorClass: "bg-[#1E8BAA]", borderClass: "border-[#1E8BAA]/20 hover:border-[#1E8BAA]/60 hover:bg-[#1E8BAA]/5" },
+                  { icon: Award, label: "Especialista Senior", sublabel: "Seguros e Inmobiliaria", colorClass: "bg-[#1E8BAA]", borderClass: "border-[#1E8BAA]/20 hover:border-[#1E8BAA]/60 hover:bg-[#1E8BAA]/5" },
                   { icon: Clock, label: "Atención 24/7", sublabel: "Siempre disponible", colorClass: "bg-[#2563EB]", borderClass: "border-[#2563EB]/20 hover:border-[#2563EB]/60 hover:bg-[#2563EB]/5" },
-                  { icon: TrendingUp, label: "Sin costo extra", sublabel: "Cobramos a la aseguradora", colorClass: "bg-[#059669]", borderClass: "border-[#059669]/20 hover:border-[#059669]/60 hover:bg-[#059669]/5" },
-                  { icon: Shield, label: "100% Independiente", sublabel: "Trabajamos para ti", colorClass: "bg-[#7C3AED]", borderClass: "border-[#7C3AED]/20 hover:border-[#7C3AED]/60 hover:bg-[#7C3AED]/5" },
+                  { icon: TrendingUp, label: "Asesoría Senior", sublabel: "Atención personalizada", colorClass: "bg-[#059669]", borderClass: "border-[#059669]/20 hover:border-[#059669]/60 hover:bg-[#059669]/5" },
+                  { icon: Shield, label: "100% Eficaz", sublabel: "Resultados garantizados", colorClass: "bg-[#7C3AED]", borderClass: "border-[#7C3AED]/20 hover:border-[#7C3AED]/60 hover:bg-[#7C3AED]/5" },
                 ].map((item) => (
                   <div
                     key={item.label}
@@ -509,7 +555,7 @@ export default function Index() {
                 Broker vs. Ir directo<br className="hidden md:block" /> a la aseguradora
               </h2>
               <p className="text-slate-300 text-lg font-normal max-w-2xl mx-auto leading-relaxed">
-                Contratando a través de Fabio Vadillo obtienes ventajas que ninguna aseguradora te ofrecerá directamente.
+                Contratando a través de Fabio Vadillo obtienes beneficios que ninguna aseguradora te ofrecerá directamente.
               </p>
             </div>
 
@@ -523,8 +569,8 @@ export default function Index() {
                 },
                 {
                   icon: Tag,
-                  title: "Mismo precio, más valor",
-                  desc: "Pagas exactamente lo mismo que en la aseguradora, pero con soporte VIP y asesoría personalizada 24/7.",
+                  title: "Respaldo Total",
+                  desc: "Recibes asesoría experta y soporte VIP en cada etapa para garantizar que tu protección sea siempre la ideal.",
                   colorClass: "bg-[#059669]"
                 },
                 {
@@ -562,9 +608,9 @@ export default function Index() {
                 Nuestros Servicios
               </span>
               <h2 id="seguros-heading" className="text-4xl md:text-5xl font-extrabold text-navy mb-4">
-                Cotiza tu seguro en <span className="text-teal">1 minuto</span>
+                Encuentra tu <span className="text-teal">Seguro Ideal</span>
               </h2>
-              <p className="text-gray-400 max-w-xl mx-auto">Sin papeleos ni letras chicas. Solo la mejor cobertura al precio justo.</p>
+              <p className="text-gray-400 max-w-xl mx-auto">Asesoría experta y personalizada para garantizar la protección que tú y tu familia realmente necesitan.</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -593,9 +639,9 @@ export default function Index() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex flex-col sm:flex-row items-center gap-1.5 text-[11px] sm:text-sm font-extrabold text-[#1E8BAA] hover:text-navy text-center"
-                      aria-label={`Cotizar ${item.title}`}
+                      aria-label={`Asesoría para ${item.title}`}
                     >
-                      Cotizar
+                      Asesoría
                       <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4" />
                     </a>
                   </div>
@@ -610,7 +656,7 @@ export default function Index() {
                 className="rounded-full bg-navy hover:bg-navy-mid text-white font-extrabold px-10 h-14 shadow-lg shadow-navy/20 transition-all hover:scale-105"
               >
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" /> Cotizar Todos los Seguros
+                  <MessageCircle className="mr-2 h-5 w-5" /> Consultar Todos los Seguros
                 </a>
               </Button>
             </div>
@@ -645,16 +691,16 @@ export default function Index() {
               </h2>
 
               <p className="text-slate-300 text-lg mb-10 leading-relaxed font-normal">
-                ¿Sabías que puedes contratar tu propio seguro de vida y <strong className="text-white font-medium">ahorrar miles de soles</strong> en tu crédito hipotecario? Te asesoro en el proceso de endoso ante tu banco.
+                ¿Sabías que puedes contratar tu propio seguro de vida y <strong className="text-white font-medium">optimizar significativamente</strong> tu crédito hipotecario? Te asesoro en el proceso de endoso ante tu banco.
               </p>
 
               {/* Glassmorphism List Box */}
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-8 mb-10 shadow-xl shadow-black/20">
                 <div className="space-y-5">
                   {[
-                    "Ahorro real en tus cuotas mensuales desde el primer mes.",
+                    "Cobertura óptima y eficiente desde el primer mes.",
                     "Cobertura superior a la póliza que impone el banco.",
-                    "Asesoría legal y técnica completa sin costo adicional.",
+                    "Asesoría legal y técnica completa con respaldo profesional.",
                     "Proceso 100% gestionado por nosotros de inicio a fin.",
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3 group">
@@ -712,7 +758,7 @@ export default function Index() {
                 {[
                   { title: "Soporte Completo", desc: "Acompañamiento 100%.", icon: FileText, colorClass: "bg-[#2563EB]", borderClass: "border-[#2563EB]/20" },
                   { title: "Informes Listos", desc: "Datos de mercado exactos.", icon: BarChart3, colorClass: "bg-[#7C3AED]", borderClass: "border-[#7C3AED]/20" },
-                  { title: "Competencia", desc: "Precios ajustados y reales.", icon: MapPin, colorClass: "bg-[#059669]", borderClass: "border-[#059669]/20" },
+                  { title: "Valorización Real", desc: "Análisis técnico del mercado.", icon: MapPin, colorClass: "bg-[#059669]", borderClass: "border-[#059669]/20" },
                   { title: "Cierre Exitoso", desc: "Contrato limpio y seguro.", icon: Handshake, colorClass: "bg-[#E11D48]", borderClass: "border-[#E11D48]/20" }
                 ].map((item) => (
                   <div
@@ -741,7 +787,7 @@ export default function Index() {
             {/* Bottom Call to Action */}
             <div className="text-center bg-white border border-slate-100 rounded-[32px] p-8 sm:p-14 shadow-xl shadow-slate-200/50 max-w-4xl mx-auto relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#2563EB] via-[#1E8BAA] to-[#059669]" />
-              <p className="text-2xl sm:text-3xl font-bold text-[#07192C] mb-8 tracking-tight">¡Seamos socios en tu <span className="text-[#1E8BAA]">éxito inmobiliario!</span></p>
+              <p className="text-2xl sm:text-3xl font-bold text-[#07192C] mb-8 tracking-tight">¡Lideramos tu <span className="text-[#1E8BAA]">éxito inmobiliario</span> con eficacia!</p>
               <Button
                 size="lg"
                 asChild
@@ -768,7 +814,7 @@ export default function Index() {
               <h2 id="testimonios-heading" className="text-4xl md:text-5xl font-extrabold text-navy mb-4">
                 Lo que dicen nuestros clientes
               </h2>
-              <p className="text-gray-400">Más de 500 familias confían en nosotros en Lima, Perú.</p>
+              <p className="text-gray-400">Más de 200 familias confían en nosotros en Lima, Perú.</p>
             </div>
 
             {/* Mobile Auto-Scrolling Marquee */}
@@ -814,7 +860,7 @@ export default function Index() {
                     <div className="flex items-center gap-3 pt-4 border-t border-gray-50">
                       <div className="w-11 h-11 rounded-full overflow-hidden border border-gray-100 shadow-sm flex-shrink-0 bg-gray-50">
                         <img
-                          src={`https://i.pravatar.cc/150?u=${encodeURIComponent(t.name)}`}
+                          src={t.img}
                           alt={`Foto de ${t.name}`}
                           className="w-full h-full object-cover"
                           loading="lazy"
@@ -999,7 +1045,7 @@ export default function Index() {
               <span className="text-white drop-shadow-sm">lo que más amas?</span>
             </h2>
             <p className="text-white/90 max-w-2xl mx-auto mb-12 text-lg md:text-xl leading-relaxed font-semibold">
-              No dejes para mañana la protección que tu familia necesita hoy. Empieza con una asesoría gratuita, honesta y sin compromiso.
+              No dejes para mañana la protección que tu familia necesita hoy. Empieza con una asesoría profesional, honesta y experta.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
               <Button
@@ -1008,7 +1054,7 @@ export default function Index() {
                 className="w-full sm:w-auto rounded-full bg-[#07192C] hover:bg-[#0A2644] text-white font-extrabold text-base px-10 h-16 shadow-xl shadow-black/20 transition-all hover:scale-105"
               >
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-3 h-6 w-6" /> Cotización Gratuita
+                  <MessageCircle className="mr-3 h-6 w-6" /> Asesoría Senior
                 </a>
               </Button>
               <Button
@@ -1037,15 +1083,15 @@ export default function Index() {
             <div className="md:col-span-5">
               <a href="#inicio" className="flex items-center gap-4 mb-6 w-fit group">
                 <div className="bg-white/5 p-2 rounded-xl group-hover:bg-white/10 transition-colors">
-                  <img src={logoIcon} alt="Vadillo Broker" className="w-10 h-10 object-contain drop-shadow-md" loading="lazy" />
+                  <img src={logoIcon} alt="VADILLOBROKER" className="w-10 h-10 object-contain drop-shadow-md" loading="lazy" />
                 </div>
                 <div>
-                  <div className="text-white font-extrabold tracking-tight text-lg">VADILLO BROKER</div>
-                  <div className="text-[#1E8BAA] text-[10px] tracking-widest font-bold uppercase">Corredor SBS N4503</div>
+                  <div className="text-white font-extrabold tracking-tight text-lg">VADILLOBROKER</div>
+                  <div className="text-[#1E8BAA] text-[10px] tracking-widest font-bold uppercase">Seguros e Inmobiliaria</div>
                 </div>
               </a>
               <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
-                Corredor de seguros independiente con más de dos décadas de experiencia acompañando familias y empresas en el mercado peruano.
+                Especialista independiente con más de dos décadas de experiencia acompañando familias y empresas en el mercado peruano.
               </p>
               {/* Review stars */}
               <div className="flex items-center gap-3 bg-white/5 w-fit px-4 py-2 rounded-full border border-white/5">
@@ -1054,7 +1100,7 @@ export default function Index() {
                     <Star key={i} className="h-3.5 w-3.5 fill-[#FCD34D] text-[#FCD34D]" />
                   ))}
                 </div>
-                <span className="text-white/70 text-xs font-semibold">+500 familias</span>
+                <span className="text-white/70 text-xs font-semibold">+200 familias</span>
               </div>
 
               {/* Social Links */}
@@ -1087,8 +1133,8 @@ export default function Index() {
               </h3>
               <ul className="space-y-3.5 text-slate-400 text-sm font-medium" aria-label="Lista de servicios">
                 {[
-                  "Seguro Vehicular / SOAT",
-                  "Seguro de Salud / EPS",
+                  "Seguro Vehicular",
+                  "Seguro de Salud",
                   "Seguro de Vida",
                   "Seguro de Hogar",
                   "Desgravamen Hipotecario",
@@ -1145,18 +1191,18 @@ export default function Index() {
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-slate-500 text-[13px] text-center md:text-left font-medium">
-              © {new Date().getFullYear()} Fabio Vadillo — Broker de Seguros &amp; Asesoría Inmobiliaria. Todos los derechos reservados.
+              © {new Date().getFullYear()} Fabio Vadillo — Seguros e Inmobiliaria. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/5">
               <Shield className="h-4 w-4 text-[#1E8BAA]" />
               <p className="text-slate-400 text-[13px] font-medium">
-                Corredor autorizado <strong className="text-white">SBS Perú N4503</strong>
+                Eficacia y Confianza en <strong className="text-white">Seguros e Inmobiliaria</strong>
               </p>
             </div>
           </div>
         </div>
       </footer>
 
-    </div>
+    </div >
   );
 }

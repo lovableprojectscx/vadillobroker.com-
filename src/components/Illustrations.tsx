@@ -5,12 +5,12 @@
      Teal       #1E8BAA   Teal light #40B8CE   Teal glow  #7DD8E8
 ───────────────────────────────────────────────────────────────────────────── */
 
-const TEAL       = "#40B8CE";
-const TEAL_MID   = "#1E8BAA";
-const TEAL_DARK  = "#145F78";
-const TEAL_GLOW  = "#7DD8E8";
-const NAVY       = "#0D2A48";
-const NAVY_MID   = "#1A4A70";
+const TEAL = "#40B8CE";
+const TEAL_MID = "#1E8BAA";
+const TEAL_DARK = "#145F78";
+const TEAL_GLOW = "#7DD8E8";
+const NAVY = "#0D2A48";
+const NAVY_MID = "#1A4A70";
 
 /** Hero section: protective shield with 4 service mini-cards */
 export function ShieldIllustration({ className }: { className?: string }) {
@@ -42,9 +42,9 @@ export function ShieldIllustration({ className }: { className?: string }) {
       <circle cx="240" cy="245" r="218" fill="none" stroke={TEAL_GLOW} strokeWidth="0.5" strokeDasharray="2 14" opacity="0.1" />
 
       {/* Corner connection lines */}
-      <line x1="88"  y1="88"  x2="148" y2="132" stroke={TEAL} strokeWidth="0.8" strokeDasharray="3 5" opacity="0.35" />
-      <line x1="392" y1="88"  x2="332" y2="132" stroke={TEAL} strokeWidth="0.8" strokeDasharray="3 5" opacity="0.35" />
-      <line x1="88"  y1="412" x2="142" y2="372" stroke={TEAL} strokeWidth="0.8" strokeDasharray="3 5" opacity="0.35" />
+      <line x1="88" y1="88" x2="148" y2="132" stroke={TEAL} strokeWidth="0.8" strokeDasharray="3 5" opacity="0.35" />
+      <line x1="392" y1="88" x2="332" y2="132" stroke={TEAL} strokeWidth="0.8" strokeDasharray="3 5" opacity="0.35" />
+      <line x1="88" y1="412" x2="142" y2="372" stroke={TEAL} strokeWidth="0.8" strokeDasharray="3 5" opacity="0.35" />
       <line x1="392" y1="412" x2="338" y2="372" stroke={TEAL} strokeWidth="0.8" strokeDasharray="3 5" opacity="0.35" />
 
       {/* Main shield */}
@@ -86,8 +86,8 @@ export function ShieldIllustration({ className }: { className?: string }) {
       {/* SBS Badge */}
       <rect x="170" y="338" width="140" height="42" rx="21" fill={TEAL_MID} />
       <rect x="170" y="338" width="140" height="42" rx="21" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.4" />
-      <text x="240" y="353" textAnchor="middle" fill="white" fontSize="8" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="1.5">CORREDOR OFICIAL</text>
-      <text x="240" y="370" textAnchor="middle" fill={TEAL_GLOW} fontSize="9.5" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" letterSpacing="1">SBS PERÚ N4503</text>
+      <text x="240" y="353" textAnchor="middle" fill="white" fontSize="8" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="1.5">RESPALDO TOTAL</text>
+      <text x="240" y="370" textAnchor="middle" fill={TEAL_GLOW} fontSize="9.5" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" letterSpacing="1">EFICACIA GARANTIZADA</text>
 
       {/* ═══ TOP LEFT — SOAT / Vehicular ═══ */}
       <rect x="8" y="38" width="84" height="84" rx="18" fill="rgba(30,139,170,0.12)" stroke={TEAL} strokeWidth="1.5" opacity="0.7" />
@@ -95,7 +95,7 @@ export function ShieldIllustration({ className }: { className?: string }) {
       <path d="M32 58 L36 50 L48 50 L52 58" stroke={TEAL_GLOW} strokeWidth="2" fill="rgba(64,184,206,0.08)" />
       <circle cx="32" cy="80" r="5.5" stroke={TEAL_GLOW} strokeWidth="2" fill="rgba(64,184,206,0.15)" />
       <circle cx="52" cy="80" r="5.5" stroke={TEAL_GLOW} strokeWidth="2" fill="rgba(64,184,206,0.15)" />
-      <text x="50" y="112" textAnchor="middle" fill={TEAL_GLOW} fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700">SOAT</text>
+      <text x="50" y="112" textAnchor="middle" fill={TEAL_GLOW} fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700">AUTO</text>
 
       {/* ═══ TOP RIGHT — Salud ═══ */}
       <rect x="388" y="38" width="84" height="84" rx="18" fill="rgba(30,139,170,0.12)" stroke={TEAL} strokeWidth="1.5" opacity="0.7" />
@@ -125,9 +125,9 @@ export function ShieldIllustration({ className }: { className?: string }) {
       <circle cx="322" cy="148" r="3.5" fill={TEAL} opacity="0.5" />
       <circle cx="148" cy="362" r="3.5" fill={TEAL} opacity="0.5" />
       <circle cx="332" cy="362" r="3.5" fill={TEAL} opacity="0.5" />
-      <circle cx="240" cy="80"  r="2.5" fill={TEAL_GLOW} opacity="0.3" />
-      <circle cx="182" cy="58"  r="1.8" fill={TEAL_GLOW} opacity="0.2" />
-      <circle cx="298" cy="58"  r="1.8" fill={TEAL_GLOW} opacity="0.2" />
+      <circle cx="240" cy="80" r="2.5" fill={TEAL_GLOW} opacity="0.3" />
+      <circle cx="182" cy="58" r="1.8" fill={TEAL_GLOW} opacity="0.2" />
+      <circle cx="298" cy="58" r="1.8" fill={TEAL_GLOW} opacity="0.2" />
     </svg>
   );
 }
@@ -186,8 +186,8 @@ export function SavingsIllustration({ className }: { className?: string }) {
       {/* ── Savings badge ── */}
       <rect x="298" y="78" width="112" height="52" rx="26" fill={TEAL_MID} />
       <rect x="298" y="78" width="112" height="52" rx="26" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.5" />
-      <text x="354" y="96"  textAnchor="middle" fill="white" fontSize="9.5" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="0.5">AHORRA HASTA</text>
-      <text x="354" y="118" textAnchor="middle" fill={TEAL_GLOW} fontSize="18"  fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">40%</text>
+      <text x="354" y="102" textAnchor="middle" fill="white" fontSize="12" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="0.5">MÁXIMA</text>
+      <text x="354" y="118" textAnchor="middle" fill={TEAL_GLOW} fontSize="12" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">PROTECCIÓN</text>
 
       {/* ── Coin stack ── */}
       <ellipse cx="86" cy="310" rx="34" ry="9" fill={TEAL_DARK} />
@@ -207,8 +207,8 @@ export function SavingsIllustration({ className }: { className?: string }) {
 
       {/* Decorative dots */}
       <circle cx="186" cy="108" r="4.5" fill={TEAL_GLOW} opacity="0.2" />
-      <circle cx="360" cy="195" r="3"   fill={TEAL_GLOW} opacity="0.2" />
-      <circle cx="72"  cy="162" r="3.5" fill={TEAL} opacity="0.3" />
+      <circle cx="360" cy="195" r="3" fill={TEAL_GLOW} opacity="0.2" />
+      <circle cx="72" cy="162" r="3.5" fill={TEAL} opacity="0.3" />
     </svg>
   );
 }
@@ -252,7 +252,7 @@ export function BuildingIllustration({ className }: { className?: string }) {
           />
         ))
       )}
-      <rect x="82"  y="136" width="62" height="12" rx="3" fill="rgba(64,184,206,0.2)" />
+      <rect x="82" y="136" width="62" height="12" rx="3" fill="rgba(64,184,206,0.2)" />
       <rect x="100" y="126" width="26" height="12" rx="2" fill="rgba(64,184,206,0.15)" />
 
       {/* Center building (tallest) */}
@@ -292,8 +292,8 @@ export function BuildingIllustration({ className }: { className?: string }) {
       {/* Key badge */}
       <circle cx="368" cy="102" r="40" fill={TEAL_MID} />
       <circle cx="368" cy="102" r="40" fill="none" stroke={TEAL_GLOW} strokeWidth="1.5" opacity="0.5" />
-      <circle cx="360" cy="94"  r="13" fill="none" stroke="white" strokeWidth="3" />
-      <circle cx="360" cy="94"  r="6"  fill={TEAL_MID} />
+      <circle cx="360" cy="94" r="13" fill="none" stroke="white" strokeWidth="3" />
+      <circle cx="360" cy="94" r="6" fill={TEAL_MID} />
       <line x1="373" y1="104" x2="393" y2="124" stroke="white" strokeWidth="3" strokeLinecap="round" />
       <line x1="388" y1="119" x2="393" y2="124" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
       <line x1="382" y1="125" x2="387" y2="120" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
@@ -310,8 +310,8 @@ export function BuildingIllustration({ className }: { className?: string }) {
       <text x="104" y="122" textAnchor="middle" fill={TEAL_GLOW} fontSize="8" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="0.5">INMOBILIARIA PRO</text>
 
       {/* Decorative dots */}
-      <circle cx="140" cy="56"  r="4"   fill={TEAL_GLOW} opacity="0.2" />
-      <circle cx="80"  cy="338" r="3.5" fill={TEAL} opacity="0.3" />
+      <circle cx="140" cy="56" r="4" fill={TEAL_GLOW} opacity="0.2" />
+      <circle cx="80" cy="338" r="3.5" fill={TEAL} opacity="0.3" />
       <circle cx="360" cy="338" r="3.5" fill={TEAL} opacity="0.3" />
     </svg>
   );
@@ -358,12 +358,12 @@ export function BrokerProfile({ className }: { className?: string }) {
 
       {/* Name + title */}
       <text x="190" y="196" textAnchor="middle" fill="white" fontSize="20" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800">Fabio Vadillo</text>
-      <text x="190" y="216" textAnchor="middle" fill={TEAL_GLOW} fontSize="10" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="1.5">CORREDOR DE SEGUROS</text>
+      <text x="190" y="216" textAnchor="middle" fill={TEAL_GLOW} fontSize="10" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="1.5">SEGUROS E INMOBILIARIA</text>
 
       {/* SBS Badge */}
       <rect x="128" y="226" width="124" height="28" rx="14" fill={TEAL_MID} />
       <rect x="128" y="226" width="124" height="28" rx="14" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.5" />
-      <text x="190" y="245" textAnchor="middle" fill="white" fontSize="10" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" letterSpacing="1">SBS PERÚ N4503</text>
+      <text x="190" y="245" textAnchor="middle" fill="white" fontSize="10" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" letterSpacing="1">COMPROMISO PERSONAL</text>
 
       {/* Divider */}
       <line x1="60" y1="272" x2="320" y2="272" stroke={TEAL} strokeWidth="1" opacity="0.2" />
@@ -372,7 +372,7 @@ export function BrokerProfile({ className }: { className?: string }) {
       <text x="100" y="304" textAnchor="middle" fill={TEAL_GLOW} fontSize="28" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">20+</text>
       <text x="100" y="320" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="600">AÑOS EXP.</text>
       <line x1="190" y1="283" x2="190" y2="330" stroke={TEAL} strokeWidth="1" opacity="0.2" />
-      <text x="280" y="304" textAnchor="middle" fill={TEAL_GLOW} fontSize="28" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">500+</text>
+      <text x="280" y="304" textAnchor="middle" fill={TEAL_GLOW} fontSize="28" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">200+</text>
       <text x="280" y="320" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="600">FAMILIAS</text>
 
       {/* Companies */}
