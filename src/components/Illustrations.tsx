@@ -325,10 +325,15 @@ export function BrokerProfile({ className }: { className?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-hidden="true"
+      aria-labelledby="brokerTitle brokerDesc"
       role="img"
     >
+      <title id="brokerTitle">Fabio Vadillo - Broker de Seguros</title>
+      <desc id="brokerDesc">Fotografía profesional de Fabio Vadillo, Broker de Seguros e Inmobiliaria con más de 20 años de experiencia.</desc>
       <defs>
+        <clipPath id="avatarClip">
+          <circle cx="190" cy="110" r="58" />
+        </clipPath>
         <linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor={NAVY} />
           <stop offset="60%" stopColor={NAVY_MID} />
@@ -349,20 +354,25 @@ export function BrokerProfile({ className }: { className?: string }) {
       <rect x="20" y="20" width="340" height="380" rx="24" fill="none" stroke={TEAL} strokeWidth="1.5" opacity="0.4" />
 
       {/* Avatar */}
-      <circle cx="190" cy="110" r="58" fill="url(#avatarBg)" />
+      <image
+        x="100"
+        y="50"
+        width="180"
+        height="180"
+        href="/fabio-vadillo.jpg"
+        clipPath="url(#avatarClip)"
+        preserveAspectRatio="xMidYMid slice"
+      />
       <circle cx="190" cy="110" r="58" fill="none" stroke={TEAL_GLOW} strokeWidth="2.5" opacity="0.5" />
       <circle cx="190" cy="110" r="48" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.2" strokeDasharray="4 4" />
-
-      {/* Initials */}
-      <text x="190" y="128" textAnchor="middle" fill="white" fontSize="38" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" letterSpacing="-1">FV</text>
 
       {/* Name + title */}
       <text x="190" y="196" textAnchor="middle" fill="white" fontSize="20" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800">Fabio Vadillo</text>
       <text x="190" y="216" textAnchor="middle" fill={TEAL_GLOW} fontSize="10" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="1.5">SEGUROS E INMOBILIARIA</text>
 
       {/* SBS Badge */}
-      <rect x="128" y="226" width="124" height="28" rx="14" fill={TEAL_MID} />
-      <rect x="128" y="226" width="124" height="28" rx="14" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.5" />
+      <rect x="110" y="226" width="160" height="28" rx="14" fill={TEAL_MID} />
+      <rect x="110" y="226" width="160" height="28" rx="14" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.5" />
       <text x="190" y="245" textAnchor="middle" fill="white" fontSize="10" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" letterSpacing="1">COMPROMISO PERSONAL</text>
 
       {/* Divider */}

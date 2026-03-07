@@ -142,18 +142,28 @@ export default function Index() {
     <div className="min-h-screen bg-white overflow-x-hidden">
 
       {/* ══════════════════════════════════════
-          FLOATING WHATSAPP BUTTON
+          FLOATING CONTACT BUTTON - ELEGANT REDESIGN
       ══════════════════════════════════════ */}
-      <a
-        href={WHATSAPP}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Contactar a Fabio Vadillo - Seguros e Inmobiliaria en Lima por WhatsApp"
-        className="fixed bottom-6 right-4 sm:right-6 z-50 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE57] text-white rounded-full p-4 sm:px-5 sm:py-3.5 shadow-xl shadow-[#25D366]/30 transition-all duration-300 hover:scale-105 font-bold text-sm"
-      >
-        <MessageCircle className="h-6 w-6 sm:h-5 sm:w-5 flex-shrink-0" />
-        <span className="hidden sm:inline">Hablar con Fabio</span>
-      </a>
+      <div className="fixed bottom-6 right-4 sm:right-6 z-50 flex items-center gap-3">
+        {/* Optional text popup on hover for desktop */}
+        <div className="hidden md:flex items-center bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-teal/20 text-navy text-sm font-bold opacity-0 translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+          Atención Inmediata
+        </div>
+
+        <a
+          href={WHATSAPP}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contactar a Fabio Vadillo - Seguros e Inmobiliaria en Lima por WhatsApp"
+          className="group relative flex items-center justify-center bg-[#25D366] text-white rounded-full p-4 sm:p-5 shadow-[0_10px_35px_rgba(37,211,102,0.4)] transition-all duration-300 hover:bg-[#1EBE57] hover:scale-110 hover:shadow-[0_15px_45px_rgba(37,211,102,0.6)]"
+        >
+          {/* Subtle pulse behind */}
+          <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-50 blur-md group-hover:animate-ping z-0" />
+
+          {/* Icon */}
+          <MessageCircle className="h-7 w-7 sm:h-8 sm:w-8 relative z-10 drop-shadow-md" />
+        </a>
+      </div>
 
       {/* ══════════════════════════════════════
           NAVBAR
