@@ -23,7 +23,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import logoIcon from "@/assets/logo-icon.png";
+import logoIcon from "@/assets/logo-icon.webp";
 import heroVideo from "@/assets/Fondo-Vadillo.mp4";
 import {
   ShieldIllustration,
@@ -267,6 +267,7 @@ export default function Index() {
             className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 mix-blend-lighten"
           >
             <source src={heroVideo} type="video/mp4" />
+            <track kind="captions" srcLang="es" label="Spanish" />
           </video>
 
           {/* Gradient overlay */}
@@ -848,7 +849,7 @@ export default function Index() {
                       <div className="flex items-center gap-4">
                         <img src={t.img} alt={t.name} className="w-12 h-12 rounded-full border border-white/20" loading="lazy" />
                         <div>
-                          <h4 className="font-bold text-[#07192C] text-[15px]">{t.name}</h4>
+                          <h3 className="font-bold text-[#07192C] text-[15px]">{t.name}</h3>
                           <span className="text-slate-500 text-[11px]">{t.role}</span>
                         </div>
                       </div>
@@ -882,7 +883,7 @@ export default function Index() {
                         />
                       </div>
                       <div>
-                        <div className="font-extrabold text-navy text-sm">{t.name}</div>
+                        <h3 className="font-extrabold text-navy text-sm">{t.name}</h3>
                         <div className="text-gray-400 text-xs">{t.role}</div>
                       </div>
                     </div>
