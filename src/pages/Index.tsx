@@ -180,8 +180,16 @@ export default function Index() {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
           {/* Logo */}
-          <a href="#inicio" aria-label="VADILLOBROKER — Inicio" className={`flex items-center group transition-all duration-300 ${!scrolled ? "bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-2xl shadow-xl border border-white/20" : ""}`}>
-            <img src="/logo-completo.png" alt="Logo VADILLOBROKER Seguros e Inmobiliaria" className="h-[42px] md:h-[48px] w-auto object-contain drop-shadow-sm" loading="eager" decoding="sync" />
+          <a href="#inicio" aria-label="VADILLOBROKER — Inicio" className="flex items-center gap-3 group">
+            <img src={logoIcon} alt="Logo VADILLOBROKER" className="w-10 h-10 object-contain" loading="eager" />
+            <div className="leading-tight">
+              <span className={`block text-xl md:text-[22px] font-bold tracking-tight transition-colors font-['Comfortaa'] ${scrolled ? "text-navy" : "text-white"}`}>
+                Vadillobroker
+              </span>
+              <span className="block text-[10px] md:text-[11px] font-bold text-teal tracking-widest uppercase font-['Nunito']">
+                Seguros e Inmobiliaria
+              </span>
+            </div>
           </a>
 
           {/* Desktop nav */}
@@ -1183,9 +1191,13 @@ export default function Index() {
           <div className="grid md:grid-cols-12 gap-12 mb-16">
             {/* Brand - Span 4 columns */}
             <div className="md:col-span-5">
-              <a href="#inicio" className="flex items-center mb-6 w-fit group">
-                <div className="bg-white/95 px-4 py-2.5 rounded-2xl group-hover:bg-white transition-colors shadow-lg shadow-black/20">
-                  <img src="/logo-completo.png" alt="VADILLOBROKER Seguros e Inmobiliaria" className="h-10 sm:h-12 w-auto object-contain drop-shadow-md" loading="lazy" decoding="async" />
+              <a href="#inicio" className="flex items-center gap-4 mb-6 w-fit group">
+                <div className="bg-white/5 p-2 rounded-xl group-hover:bg-white/10 transition-colors">
+                  <img src={logoIcon} alt="VADILLOBROKER" className="w-10 h-10 object-contain drop-shadow-md" loading="lazy" />
+                </div>
+                <div>
+                  <div className="text-white font-bold tracking-tight text-[22px] font-['Comfortaa']">Vadillobroker</div>
+                  <div className="text-[#1E8BAA] text-[11px] tracking-widest font-bold uppercase font-['Nunito']">Seguros e Inmobiliaria</div>
                 </div>
               </a>
               <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
