@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
+# Vadillo Broker - Sitio Web Corporativo
 
-## Project info
+## Descripción
+Sitio web web oficial de **Fabio Vadillo**, Broker de Seguros Independiente con más de 20 años de experiencia (Autorizado SBS N4503). La plataforma está diseñada para ofrecer servicios de asesoría y venta de seguros (Vehicular, SOAT, EPS, Vida, Hogar, Desgravamen Hipotecario) así como gestión inmobiliaria.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Tecnologías Utilizadas
+- **React 18** con **TypeScript**
+- **Vite** (Build Tool súper rápido)
+- **Tailwind CSS** (Estilización utilitaria moderna)
+- **Lucide React** (Iconografía limpia e inconsistente)
+- **Shadcn UI & Radix UI** (Componentes de interfaz accesibles y personalizables)
+- **Web3Forms** (Backend serverless para la recepción de correos desde el formulario de contacto directo).
 
-## How can I edit this code?
+## Características Principales
+- **Diseño Premium y Responsivo:** Totalmente adaptado para verse perfecto en dispositivos móviles, tablets y computadoras de escritorio.
+- **Microinteracciones y Animaciones:** Se utilizan utilidades de Tailwind (`hover`, `transition-all`, `group-hover`) para dar vida a los elementos.
+- **Sección de Contacto Dividida:** Rutas claras para usuarios de Seguros (WhatsApp/Llamada) y usuarios de Inmobiliaria, sin confundir los canales.
+- **Formulario de Contacto en Vivo:** Integrado con Web3Forms para evitar caídas (como las de FormSubmit) y manejar la captación de leads de manera transparente.
+- **SEO Optimizado:** Etiquetas Open Graph, schema.org JSON-LD para negocios locales, meta descripciones y datos estructurados incrustados en el `index.html`.
 
-There are several ways of editing your application.
+## Configuración y Ejecución Local
 
-**Use Lovable**
+Para trabajar en este proyecto de forma local, sigue estos pasos:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+1. **Clonar el repositorio** y acceder a la carpeta:
+   ```bash
+   git clone [url-del-repositorio]
+   cd vadillobroker.com-main
+   ```
 
-Changes made via Lovable will be committed automatically to this repo.
+2. **Instalar dependencias:**
+   Se recomienda usar `npm`:
+   ```bash
+   npm install
+   ```
 
-**Use your preferred IDE**
+3. **Ejecutar el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+   El sitio estará disponible para visualizar en vivo (usualmente en `http://localhost:8080` o `http://localhost:5173`).
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Compilación para Producción (Deploy)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Cuando el sitio esté listo para ser subido a Vercel, Netlify u otro hosting estático, se debe compilar el código optimizado:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+npm run build
 ```
+Esto generará la carpeta `dist/` con todo el código minificado y listo. En Vercel, este proceso es completamente automático al subir cambios a la rama `main`.
 
-**Edit a file directly in GitHub**
+## Integración con Web3Forms
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+El formulario de contacto al final de la página (en `src/pages/Index.tsx`) se comunica directamente a los correos del cliente a través de **Web3Forms**. Toma en cuenta:
+- Se utiliza un `access_key` que enlaza el envío hacia el correo registrado (`fabio@vadillobroker.com`).
+- No se utilizan funciones Pro de Web3Forms (como copia cc multiple) para mantener la infraestructura 100% gratuita y sin fricciones. 
+- Cualquier actualización de llave (si se pierde acceso) se debe hacer regenerando la API Key en Web3Forms y reemplazando el valor en el input hidden `access_key` del archivo del index.
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+*Desarrollado para la optimización de la presencia digital de Vadillo Broker.*
