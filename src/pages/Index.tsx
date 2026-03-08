@@ -967,7 +967,7 @@ export default function Index() {
                 Hablemos hoy mismo
               </h2>
               <p className="text-slate-500 text-lg font-medium max-w-2xl mx-auto leading-relaxed">
-                Recibe asesoría profesional, honesta y sin compromiso en todo el Perú.
+                Recibe asesoría profesional, clara y directa, ¡despeja tus dudas, estoy para escucharte!
               </p>
             </div>
 
