@@ -180,16 +180,13 @@ export default function Index() {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
           {/* Logo */}
-          <a href="#inicio" aria-label="VADILLOBROKER — Inicio" className="flex items-center gap-3 group">
-            <img src={logoIcon} alt="Logo VADILLOBROKER" className="w-10 h-10 object-contain" loading="eager" />
-            <div className="leading-tight">
-              <span className={`block text-xl md:text-[22px] font-medium tracking-tight transition-colors font-['Comfortaa'] ${scrolled ? "text-navy" : "text-white"}`}>
-                Vadillobroker
-              </span>
-              <span className="block text-[10px] md:text-[11px] font-medium text-teal/80 tracking-wide font-['Comfortaa']">
-                Seguros e Inmobiliaria
-              </span>
-            </div>
+          <a href="#inicio" aria-label="VADILLOBROKER — Inicio" className="flex items-center group">
+            <img
+              src="/logo-completo.png"
+              alt="VADILLOBROKER — Seguros e Inmobiliaria"
+              className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+              loading="eager"
+            />
           </a>
 
           {/* Desktop nav */}
@@ -1191,13 +1188,14 @@ export default function Index() {
           <div className="grid md:grid-cols-12 gap-12 mb-16">
             {/* Brand - Span 4 columns */}
             <div className="md:col-span-5">
-              <a href="#inicio" className="flex items-center gap-4 mb-6 w-fit group">
-                <div className="bg-white/5 p-2 rounded-xl group-hover:bg-white/10 transition-colors">
-                  <img src={logoIcon} alt="VADILLOBROKER" className="w-10 h-10 object-contain drop-shadow-md" loading="lazy" />
-                </div>
-                <div>
-                  <div className="text-white font-medium tracking-tight text-[22px] font-['Comfortaa']">Vadillobroker</div>
-                  <div className="text-teal/80 text-[11px] tracking-wide font-medium font-['Comfortaa']">Seguros e Inmobiliaria</div>
+              <a href="#inicio" className="flex items-center mb-6 w-fit group">
+                <div className="bg-white/5 p-1 rounded-xl group-hover:bg-white/10 transition-colors">
+                  <img
+                    src="/logo-completo.png"
+                    alt="VADILLOBROKER — Seguros e Inmobiliaria"
+                    className="h-12 md:h-14 w-auto object-contain drop-shadow-md brightness-0 invert"
+                    loading="lazy"
+                  />
                 </div>
               </a>
               <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
