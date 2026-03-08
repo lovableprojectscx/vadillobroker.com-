@@ -83,11 +83,12 @@ export function ShieldIllustration({ className }: { className?: string }) {
         opacity="0.4"
       />
 
-      {/* SBS Badge */}
-      <rect x="170" y="338" width="140" height="42" rx="21" fill={TEAL_MID} />
-      <rect x="170" y="338" width="140" height="42" rx="21" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.4" />
-      <text x="240" y="353" textAnchor="middle" fill="white" fontSize="8" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="1.5">RESPALDO TOTAL</text>
-      <text x="240" y="370" textAnchor="middle" fill={TEAL_GLOW} fontSize="9.5" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" letterSpacing="1">EFICACIA GARANTIZADA</text>
+      {/* Corredor Badge */}
+      <rect x="158" y="334" width="164" height="52" rx="26" fill={TEAL_MID} />
+      <rect x="158" y="334" width="164" height="52" rx="26" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.4" />
+      <text x="240" y="350" textAnchor="middle" fill="white" fontSize="8" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="1.5">CORREDOR OFICIAL</text>
+      <text x="240" y="365" textAnchor="middle" fill={TEAL_GLOW} fontSize="7.5" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="0.8">SBS N°4503</text>
+      <text x="240" y="378" textAnchor="middle" fill={TEAL_GLOW} fontSize="7.5" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="0.8">MVCS PN13793</text>
 
       {/* ═══ TOP LEFT — SOAT / Vehicular ═══ */}
       <rect x="8" y="38" width="84" height="84" rx="18" fill="rgba(30,139,170,0.12)" stroke={TEAL} strokeWidth="1.5" opacity="0.7" />
@@ -118,7 +119,7 @@ export function ShieldIllustration({ className }: { className?: string }) {
       <rect x="424" y="434" width="12" height="14" rx="2" stroke={TEAL_GLOW} strokeWidth="1.5" fill="rgba(64,184,206,0.15)" />
       <rect x="415" y="433" width="7" height="7" rx="1" stroke={TEAL_GLOW} strokeWidth="1.5" fill="rgba(64,184,206,0.1)" />
       <rect x="437" y="408" width="6" height="12" stroke={TEAL_GLOW} strokeWidth="1.5" fill="none" />
-      <text x="430" y="472" textAnchor="middle" fill={TEAL_GLOW} fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700">HOGAR</text>
+      <text x="430" y="472" textAnchor="middle" fill={TEAL_GLOW} fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700">VIVIENDA</text>
 
       {/* Accent dots */}
       <circle cx="158" cy="148" r="3.5" fill={TEAL} opacity="0.5" />
@@ -186,8 +187,8 @@ export function SavingsIllustration({ className }: { className?: string }) {
       {/* ── Savings badge ── */}
       <rect x="298" y="78" width="112" height="52" rx="26" fill={TEAL_MID} />
       <rect x="298" y="78" width="112" height="52" rx="26" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.5" />
-      <text x="354" y="102" textAnchor="middle" fill="white" fontSize="12" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="0.5">MÁXIMA</text>
-      <text x="354" y="118" textAnchor="middle" fill={TEAL_GLOW} fontSize="12" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">PROTECCIÓN</text>
+      <text x="354" y="102" textAnchor="middle" fill="white" fontSize="12" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="0.5">MÁXIMO</text>
+      <text x="354" y="118" textAnchor="middle" fill={TEAL_GLOW} fontSize="12" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">RETORNO</text>
 
       {/* ── Coin stack ── */}
       <ellipse cx="86" cy="310" rx="34" ry="9" fill={TEAL_DARK} />
@@ -332,7 +333,7 @@ export function BrokerProfile({ className }: { className?: string }) {
       <desc id="brokerDesc">Fotografía profesional de Fabio Vadillo, Broker de Seguros e Inmobiliaria con más de 20 años de experiencia.</desc>
       <defs>
         <clipPath id="avatarClip">
-          <circle cx="190" cy="110" r="58" />
+          <circle cx="190" cy="118" r="72" />
         </clipPath>
         <linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor={NAVY} />
@@ -355,48 +356,41 @@ export function BrokerProfile({ className }: { className?: string }) {
 
       {/* Avatar */}
       <image
-        x="100"
-        y="50"
-        width="180"
-        height="180"
+        x="78"
+        y="46"
+        width="224"
+        height="224"
         href="/fabio-vadillo.jpg"
         clipPath="url(#avatarClip)"
         preserveAspectRatio="xMidYMid slice"
       />
-      <circle cx="190" cy="110" r="58" fill="none" stroke={TEAL_GLOW} strokeWidth="2.5" opacity="0.5" />
-      <circle cx="190" cy="110" r="48" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.2" strokeDasharray="4 4" />
+      <circle cx="190" cy="118" r="72" fill="none" stroke={TEAL_GLOW} strokeWidth="2.5" opacity="0.5" />
+      <circle cx="190" cy="118" r="62" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.2" strokeDasharray="4 4" />
 
       {/* Name + title */}
-      <text x="190" y="196" textAnchor="middle" fill="white" fontSize="20" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800">Fabio Vadillo</text>
-      <text x="190" y="216" textAnchor="middle" fill={TEAL_GLOW} fontSize="10" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="1.5">SEGUROS E INMOBILIARIA</text>
+      <text x="190" y="210" textAnchor="middle" fill="white" fontSize="20" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800">Fabio Vadillo</text>
+      <text x="190" y="228" textAnchor="middle" fill={TEAL_GLOW} fontSize="11" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="2">BROKER</text>
 
       {/* SBS Badge */}
-      <rect x="110" y="226" width="160" height="28" rx="14" fill={TEAL_MID} />
-      <rect x="110" y="226" width="160" height="28" rx="14" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.5" />
-      <text x="190" y="245" textAnchor="middle" fill="white" fontSize="10" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" letterSpacing="1">COMPROMISO PERSONAL</text>
+      <rect x="110" y="236" width="160" height="28" rx="14" fill={TEAL_MID} />
+      <rect x="110" y="236" width="160" height="28" rx="14" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.5" />
+      <text x="190" y="255" textAnchor="middle" fill="white" fontSize="10" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900" letterSpacing="1">COMPROMISO PERSONAL</text>
 
       {/* Divider */}
-      <line x1="60" y1="272" x2="320" y2="272" stroke={TEAL} strokeWidth="1" opacity="0.2" />
+      <line x1="60" y1="282" x2="320" y2="282" stroke={TEAL} strokeWidth="1" opacity="0.2" />
 
       {/* Stats */}
-      <text x="100" y="304" textAnchor="middle" fill={TEAL_GLOW} fontSize="28" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">20+</text>
-      <text x="100" y="320" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="600">AÑOS EXP.</text>
-      <line x1="190" y1="283" x2="190" y2="330" stroke={TEAL} strokeWidth="1" opacity="0.2" />
-      <text x="280" y="304" textAnchor="middle" fill={TEAL_GLOW} fontSize="28" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">200+</text>
-      <text x="280" y="320" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="600">FAMILIAS</text>
+      <text x="100" y="314" textAnchor="middle" fill={TEAL_GLOW} fontSize="28" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">20+</text>
+      <text x="100" y="330" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="600">AÑOS EXP.</text>
+      <line x1="190" y1="293" x2="190" y2="340" stroke={TEAL} strokeWidth="1" opacity="0.2" />
+      <text x="280" y="314" textAnchor="middle" fill={TEAL_GLOW} fontSize="28" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="900">200+</text>
+      <text x="280" y="330" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="600">FAMILIAS</text>
 
-      {/* Companies */}
-      <line x1="60" y1="340" x2="320" y2="340" stroke={TEAL} strokeWidth="1" opacity="0.15" />
-      {["RÍMAC", "PACÍFICO", "MAPFRE"].map((name, i) => (
-        <text key={name} x={88 + i * 102} y="368" textAnchor="middle" fill={`${TEAL_GLOW}60`}
-          fontSize="9.5" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="0.5">
-          {name}
-        </text>
-      ))}
-
-      {/* 24/7 */}
-      <text x="190" y="396" textAnchor="middle" fill={`${TEAL}80`} fontSize="9" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="1">
-        ATENCIÓN 24 / 7 VÍA WHATSAPP
+      {/* 24/7 badge */}
+      <rect x="60" y="352" width="260" height="30" rx="15" fill="rgba(37,211,102,0.15)" />
+      <rect x="60" y="352" width="260" height="30" rx="15" fill="none" stroke="rgba(37,211,102,0.35)" strokeWidth="1" />
+      <text x="190" y="372" textAnchor="middle" fill="#25D366" fontSize="11" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="1.2">
+        ATENCIÓN 24/7 VÍA WHATSAPP
       </text>
     </svg>
   );

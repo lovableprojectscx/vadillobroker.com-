@@ -18,7 +18,7 @@ import {
   Star, Car, HeartPulse, Umbrella, Home, Shield, Tag, Search,
   CheckCircle, MapPin, Phone, MessageCircle, Heart, ChevronRight,
   FileText, BarChart3, Users, Handshake, Menu, X, ArrowRight,
-  Award, Clock, TrendingUp, Building2, Quote, Zap, Linkedin,
+  Award, Clock, TrendingUp, Building2, Quote, Zap, Linkedin, Mail, ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -34,22 +34,26 @@ import {
 
 /* ─────────────── Constants ─────────────── */
 const PHONE = "51997239181";
+const PHONE_INMOB = "51959143148";
 const WA = (msg: string) => `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+const WA_INMOB = (msg: string) => `https://wa.me/${PHONE_INMOB}?text=${encodeURIComponent(msg)}`;
 
 // Mensajes personalizados por contexto
 const WHATSAPP = WA("¡Hola Fabio! Quisiera recibir asesoría profesional sobre seguros. ¿Podría ayudarme?");
 const WA_HERO = WA("¡Hola Fabio! Vi tu web y me interesa conocer mis opciones de seguros. ¿Podemos hablar?");
 const WA_VEHICULAR = WA("¡Hola Fabio! Me interesa consultar sobre un seguro vehicular. ¿Cuáles son las mejores opciones?");
 const WA_SALUD = WA("¡Hola Fabio! Quisiera información sobre planes de salud para mí o mi familia. ¿Puedes ayudarme?");
+const WA_ONCOLOGICO = WA("¡Hola Fabio! Quisiera información sobre seguros oncológicos. ¿Puedes ayudarme?");
 const WA_VIDA = WA("¡Hola Fabio! Me interesa consultar sobre un seguro de vida. ¿Qué opciones tienes disponibles?");
 const WA_HOGAR = WA("¡Hola Fabio! Quisiera consultar sobre un seguro de hogar. ¿Cuáles son las coberturas que manejas?");
-const WA_INMOBILIARIA = WA("¡Hola Fabio! Me interesa el servicio de inmobiliaria. ¿Podemos coordinar una consulta?");
+const WA_INMOBILIARIA = WA_INMOB("¡Hola Fabio! Me interesa el servicio de inmobiliaria. ¿Podemos coordinar una consulta?");
 const WA_CONTACTO = WA("¡Hola Fabio! Me comunico desde tu web. Quisiera recibir más información sobre tus servicios.");
 
 // Mapa de mensajes por servicio para los botones individuales
 const WA_SERVICIOS: Record<string, string> = {
   "Seguro Vehicular": WA_VEHICULAR,
   "Seguro de Salud": WA_SALUD,
+  "Seguro Oncológico": WA_ONCOLOGICO,
   "Seguro de Vida": WA_VIDA,
   "Seguro de Hogar": WA_HOGAR,
 };
@@ -66,9 +70,10 @@ const NAV_LINKS = [
 ];
 
 const SERVICES = [
-  { icon: Car, title: "Seguro Vehicular", desc: "Protección total para tu vehículo con Rímac, Pacífico y Mapfre con máxima eficacia.", color: "from-blue-500 to-blue-700", bg: "bg-blue-50", border: "hover:border-blue-200", tag: "Más solicitado" },
+  { icon: Car, title: "Seguro Vehicular", desc: "Protección total para tu vehículo con la compañía de seguros que desees.", color: "from-blue-500 to-blue-700", bg: "bg-blue-50", border: "hover:border-blue-200", tag: "Más solicitado" },
   { icon: HeartPulse, title: "Seguro de Salud", desc: "Planes de salud integrales para personas, familias y empresas con el respaldo de las mejores aseguradoras.", color: "from-rose-500 to-rose-700", bg: "bg-rose-50", border: "hover:border-rose-200", tag: "" },
-  { icon: Umbrella, title: "Seguro de Vida", desc: "Garantiza el futuro económico de tus seres queridos ante cualquier eventualidad.", color: "from-violet-500 to-violet-700", bg: "bg-violet-50", border: "hover:border-violet-200", tag: "" },
+  { icon: HeartPulse, title: "Seguro Oncológico", desc: "Planes preventivos especializados, con chequeos médicos y hasta 100% de cobertura.", color: "from-pink-500 to-pink-700", bg: "bg-pink-50", border: "hover:border-pink-200", tag: "" },
+  { icon: Umbrella, title: "Seguro de Vida", desc: "Garantiza tu futuro económico y el de tus seres queridos ante cualquier eventualidad.", color: "from-violet-500 to-violet-700", bg: "bg-violet-50", border: "hover:border-violet-200", tag: "" },
   { icon: Home, title: "Seguro de Hogar", desc: "Cobertura completa contra todo riesgo para proteger tu patrimonio e inmueble.", color: "from-emerald-500 to-emerald-700", bg: "bg-emerald-50", border: "hover:border-emerald-200", tag: "" },
 ];
 
@@ -100,7 +105,7 @@ const TESTIMONIALS = [
 
 const FAQS = [
   { q: "¿Cómo funciona la asesoría de Fabio Vadillo?", a: "Recibes un servicio personalizado y experto en la gestión de tus pólizas, asegurando que siempre tengas la protección más eficaz y el respaldo total ante cualquier eventualidad." },
-  { q: "¿Qué pasa si tengo un accidente o emergencia de madrugada?", a: "Cuentas con soporte 24/7 vía WhatsApp. Te guío en todo el proceso para que no pierdas tiempo valioso en un momento crítico." },
+  { q: "¿Qué pasa si tengo un accidente o emergencia de madrugada?", a: "Ya no contarás solo con el soporte de la compañía elegida, sino que seré tu aliado en todo el proceso para que no pierdas tiempo valioso en un momento crítico." },
   { q: "¿Puedo trasladar mi seguro actual con ustedes?", a: "Sí, puedes trasladar tu póliza vigente sin perder beneficios ni antigüedad. Nos encargamos del proceso de optimización completo ante la aseguradora." },
   { q: "¿Es necesario ir a una oficina para contratar?", a: "No. Todo el proceso puede realizarse 100% de forma digital y remota, desde cualquier lugar de Lima o el Perú." },
   { q: "¿Es necesario ser cliente de un banco para el desgravamen?", a: "No necesariamente. Te asesoro sobre las opciones disponibles según tu crédito hipotecario vigente y tu situación particular." },
@@ -303,21 +308,22 @@ export default function Index() {
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-1.5 text-white/90 text-[10px] md:text-[11px] font-bold tracking-widest uppercase mb-6 md:mb-8 hero-animate">
                 <span className="w-1.5 h-1.5 rounded-full bg-teal shadow-[0_0_8px_rgba(20,184,166,0.8)] animate-pulse" />
-                Un compromiso personal con su tranquilidad
+                Experiencia que respalda, atención que acompaña
               </div>
 
               <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-[54px] font-bold text-white leading-tight mb-5 md:mb-6 tracking-tight hero-animate hero-animate-delay-1">
-                Eficacia y Confianza en<br />
+                Tu patrimonio merece<br />
                 <span className="text-teal font-extrabold relative inline-block">
-                  Seguros e Inmobiliaria
+                  atención directa,
                   <svg className="absolute w-full h-2 md:h-3 -bottom-1 left-0 text-teal/30" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                   </svg>
-                </span>
+                </span><br />
+                no un call center.
               </h1>
 
               <p className="text-slate-300 text-base md:text-lg mb-8 md:mb-10 leading-relaxed font-normal hero-animate hero-animate-delay-2">
-                <strong className="text-white font-medium">Fabio Vadillo</strong>, especialista en <strong className="text-white font-medium">Seguros e Inmobiliaria</strong> en Lima, Perú. Más de 20 años optimizando coberturas con <strong className="text-white font-medium">Rímac, Pacífico y Mapfre</strong> para garantizar tu tranquilidad y respaldo total.
+                <strong className="text-white font-medium">Enfoque estrictamente personalizado:</strong> atiendo a una cartera limitada de clientes, garantizando una gestión dedicada y la defensa de tus intereses.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10 md:mb-14 hero-animate hero-animate-delay-3">
@@ -345,7 +351,7 @@ export default function Index() {
                 {[
                   { value: "+200", label: "Familias protegidas" },
                   { value: "20+", label: "Años de experiencia" },
-                  { value: "10", label: "Aseguradoras top" },
+                  { value: "+10", label: "Aseguradoras top" },
                 ].map((s, i) => (
                   <div key={s.label} className={i !== 0 ? "pl-3 md:pl-10" : "pr-3 md:pr-10"}>
                     <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-none mb-1 md:mb-1.5 tracking-tight">{s.value}</div>
@@ -405,19 +411,21 @@ export default function Index() {
         <section aria-label="Aseguradoras con las que trabajamos" className="py-10 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-6">
             <p className="text-center text-[10px] sm:text-[11px] font-extrabold tracking-widest text-[#94A3B8] uppercase mb-6">
-              Comparamos las mejores aseguradoras del Perú para ti
+              Las mejores aseguradoras del Perú para ti
             </p>
             {/* Marquee Container */}
             <div className="relative flex overflow-hidden w-full group mask-image-linear">
               {[0, 1].map((idx) => (
                 <div key={idx} aria-hidden={idx === 1} className="flex animate-marquee shrink-0 items-center gap-8 sm:gap-16 px-4 sm:px-8 pb-4">
-                  {/* Original 5 — favicon API works correctly for these */}
+                  {/* Insurers with working favicon API */}
                   {[
                     { name: "RÍMAC", domain: "rimac.com" },
                     { name: "PACÍFICO", domain: "pacifico.com.pe" },
                     { name: "MAPFRE", domain: "mapfre.com" },
                     { name: "LA POSITIVA", domain: "lapositiva.com.pe" },
                     { name: "SANITAS", domain: "sanitasperu.com" },
+                    { name: "CHUBB", domain: "chubb.com" },
+                    { name: "CRP", domain: "crp.com.pe" },
                   ].map(({ name, domain }) => (
                     <div key={name} className="flex items-center gap-2 group/logo cursor-default">
                       <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white overflow-hidden shadow-sm border border-gray-100 group-hover/logo:border-teal/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-50 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0">
@@ -433,6 +441,21 @@ export default function Index() {
                       </span>
                     </div>
                   ))}
+
+                  {/* ONCOSALUD — Imagen local */}
+                  <div className="flex items-center gap-2 group/logo cursor-default">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white overflow-hidden shadow-sm border border-gray-100 group-hover/logo:border-teal/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-50 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0">
+                      <img
+                        src="/onco-icon.webp"
+                        alt="Seguro Oncosalud en Lima Perú — Vadillo Broker"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover/logo:text-navy transition-colors duration-300 tracking-wide">
+                      ONCOSALUD
+                    </span>
+                  </div>
 
                   {/* QUALITAS — Logo desde versión pública accesible */}
                   <div className="flex items-center gap-2 group/logo cursor-default">
@@ -492,7 +515,7 @@ export default function Index() {
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* Left — Profile illustration */}
             <div className="flex justify-center">
-              <BrokerProfile className="w-full max-w-xs drop-shadow-xl" />
+              <BrokerProfile className="w-full max-w-sm drop-shadow-xl" />
             </div>
 
             {/* Right — Content */}
@@ -502,22 +525,22 @@ export default function Index() {
                 Sobre Nosotros
               </span>
               <h2 id="nosotros-heading" className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-tight">
-                20 años construyendo <span className="text-teal">confianza</span>
+                Asesoría <span className="text-teal">Estratégica</span>, no masiva
               </h2>
               <p className="text-gray-500 mb-4 leading-relaxed">
-                Soy <strong className="text-navy">Fabio Vadillo</strong>, Administrador de Empresas con amplia trayectoria en Banca, Seguros y AFP. Trabajé en{" "}
-                <strong className="text-navy">BCP, Prima AFP, Mapfre y Rímac</strong> hasta 2017, cuando fundé mi propia firma de <strong className="text-navy">Seguros e Inmobiliaria</strong> en Lima.
+                Con <strong className="text-navy">20 años de trayectoria</strong> en el sector financiero peruano, entiendo que la verdadera protección requiere dedicación personal. Por eso, desde{" "}
+                <strong className="text-navy">2017</strong>, opero como <strong className="text-navy">Broker Independiente</strong> enfocado en brindar un servicio directo y sin intermediarios.
               </p>
               <p className="text-gray-500 mb-10 leading-relaxed">
-                Hoy represento a más de <strong className="text-navy">+200 familias y empresas en Lima</strong> — Miraflores, San Isidro, Surco y más — defendiendo sus intereses y encontrando siempre la mejor póliza en el mercado peruano de seguros.
+                Represento a un grupo exclusivo de <strong className="text-navy">familias y empresas</strong>, garantizando que cada póliza sea la mejor que el mercado puede ofrecer.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
                 {[
-                  { icon: Award, label: "Especialista Senior", sublabel: "Seguros e Inmobiliaria", colorClass: "bg-[#1E8BAA]", borderClass: "border-[#1E8BAA]/20 hover:border-[#1E8BAA]/60 hover:bg-[#1E8BAA]/5" },
-                  { icon: Clock, label: "Atención 24/7", sublabel: "Siempre disponible", colorClass: "bg-[#2563EB]", borderClass: "border-[#2563EB]/20 hover:border-[#2563EB]/60 hover:bg-[#2563EB]/5" },
-                  { icon: TrendingUp, label: "Asesoría Senior", sublabel: "Atención personalizada", colorClass: "bg-[#059669]", borderClass: "border-[#059669]/20 hover:border-[#059669]/60 hover:bg-[#059669]/5" },
-                  { icon: Shield, label: "100% Eficaz", sublabel: "Resultados garantizados", colorClass: "bg-[#7C3AED]", borderClass: "border-[#7C3AED]/20 hover:border-[#7C3AED]/60 hover:bg-[#7C3AED]/5" },
+                  { icon: Award, label: "Corredor Certificado", sublabel: "SBS N°4503 / MVCS PN13793", colorClass: "bg-[#1E8BAA]", borderClass: "border-[#1E8BAA]/20 hover:border-[#1E8BAA]/60 hover:bg-[#1E8BAA]/5" },
+                  { icon: Clock, label: "Sin costo extra", sublabel: "Se cobra a la aseguradora", colorClass: "bg-[#2563EB]", borderClass: "border-[#2563EB]/20 hover:border-[#2563EB]/60 hover:bg-[#2563EB]/5" },
+                  { icon: TrendingUp, label: "100% Independiente", sublabel: "Se trabaja para ti", colorClass: "bg-[#059669]", borderClass: "border-[#059669]/20 hover:border-[#059669]/60 hover:bg-[#059669]/5" },
+                  { icon: Shield, label: "+20 Años de Experiencia", sublabel: "+10 Aseguradoras", colorClass: "bg-[#7C3AED]", borderClass: "border-[#7C3AED]/20 hover:border-[#7C3AED]/60 hover:bg-[#7C3AED]/5" },
                 ].map((item) => (
                   <div
                     key={item.label}
@@ -534,18 +557,7 @@ export default function Index() {
                 ))}
               </div>
 
-              <div className="flex flex-wrap items-center gap-2 pt-2">
-                {[
-                  { name: "PACÍFICO", color: "text-[#00529A] bg-[#00529A]/10 border-[#00529A]/20" },
-                  { name: "RÍMAC", color: "text-[#E3000F] bg-[#E3000F]/10 border-[#E3000F]/20" },
-                  { name: "MAPFRE", color: "text-[#D31145] bg-[#D31145]/10 border-[#D31145]/20" },
-                  { name: "LA POSITIVA", color: "text-[#F57C00] bg-[#F57C00]/10 border-[#F57C00]/20" },
-                ].map((brand) => (
-                  <span key={brand.name} className={`font-black text-[10px] sm:text-xs tracking-wider px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border shadow-sm ${brand.color}`}>
-                    {brand.name}
-                  </span>
-                ))}
-              </div>
+
             </div>
           </div>
         </section>
@@ -571,7 +583,7 @@ export default function Index() {
                 Broker vs. Ir directo<br className="hidden md:block" /> a la aseguradora
               </h2>
               <p className="text-slate-300 text-lg font-normal max-w-2xl mx-auto leading-relaxed">
-                Contratando a través de Fabio Vadillo obtienes beneficios que ninguna aseguradora te ofrecerá directamente.
+                Contratar a través de un broker garantiza información objetiva y sin conflictos de interés, ya que no depende de cuotas de venta ni tiene presiones corporativas. Obtén datos reales, no argumentos de venta.
               </p>
             </div>
 
@@ -580,7 +592,7 @@ export default function Index() {
                 {
                   icon: Shield,
                   title: "Defendemos tus intereses",
-                  desc: "En caso de siniestro, peleamos por ti frente a la aseguradora para garantizar tu indemnización justa.",
+                  desc: "En caso de siniestro, te representamos ante la aseguradora para garantizar que la indemnización sea la que corresponde.",
                   colorClass: "bg-[#2563EB]"
                 },
                 {
@@ -592,7 +604,7 @@ export default function Index() {
                 {
                   icon: Search,
                   title: "Comparamos por ti",
-                  desc: "Analizamos todas las opciones (Rímac, Pacífico, Mapfre) para encontrar la póliza perfecta para tu caso.",
+                  desc: "Analizamos las opciones disponibles hasta encontrar la póliza perfecta para ti.",
                   colorClass: "bg-[#7C3AED]"
                 },
               ].map((item) => (
@@ -714,10 +726,9 @@ export default function Index() {
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-8 mb-10 shadow-xl shadow-black/20">
                 <div className="space-y-5">
                   {[
-                    "Cobertura óptima y eficiente desde el primer mes.",
-                    "Cobertura superior a la póliza que impone el banco.",
+                    "Obtén una cobertura propia y superior a la póliza del banco.",
+                    "Alternativas en soles y dólares con opción de rescate.",
                     "Asesoría legal y técnica completa con respaldo profesional.",
-                    "Proceso 100% gestionado por nosotros de inicio a fin.",
                   ].map((t) => (
                     <div key={t} className="flex items-start gap-3 group">
                       <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 border border-emerald-500/30 group-hover:bg-emerald-500/30 transition-colors">
@@ -803,7 +814,7 @@ export default function Index() {
             {/* Bottom Call to Action */}
             <div className="text-center bg-white border border-slate-100 rounded-[32px] p-8 sm:p-14 shadow-xl shadow-slate-200/50 max-w-4xl mx-auto relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#2563EB] via-[#1E8BAA] to-[#059669]" />
-              <p className="text-2xl sm:text-3xl font-bold text-[#07192C] mb-8 tracking-tight">¡Lideramos tu <span className="text-[#1E8BAA]">éxito inmobiliario</span> con eficacia!</p>
+              <p className="text-2xl sm:text-3xl font-bold text-[#07192C] mb-8 tracking-tight">¡Lideramos tu <span className="text-[#1E8BAA]">éxito inmobiliario</span> con <strong>solvencia</strong>!</p>
               <Button
                 size="lg"
                 asChild
@@ -961,48 +972,76 @@ export default function Index() {
             </div>
 
             <div className="grid lg:grid-cols-5 gap-6 mb-12">
-              {/* Left Column: Contact Cards */}
-              <div className="lg:col-span-2 flex flex-col gap-4">
-                {[
-                  {
-                    icon: Phone,
-                    title: "Llámanos",
-                    lines: ["997 239 181", "995 431 138"],
-                    href: "tel:+51997239181",
-                    cta: "Llamar ahora",
-                    colorClass: "bg-[#2563EB]"
-                  },
-                  {
-                    icon: MessageCircle,
-                    title: "WhatsApp",
-                    lines: ["997 239 181", "Atención rápida"],
-                    href: WHATSAPP,
-                    cta: "Abrir WhatsApp",
-                    colorClass: "bg-[#059669]"
-                  }
-                ].map((item) => (
-                  <a
-                    key={item.title}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-sm flex items-center gap-5 hover:-translate-y-1 transition-transform"
-                    aria-label={item.cta}
-                  >
-                    <div className={`w-12 h-12 rounded-xl ${item.colorClass} shadow-md flex items-center justify-center flex-shrink-0`}>
-                      <item.icon className="h-6 w-6 text-white" strokeWidth={2.5} />
+              <div className="lg:col-span-2 space-y-8">
+                {/* Seguros Area */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center">
+                      <Shield className="h-5 w-5 text-[#2563EB]" />
                     </div>
-                    <div className="flex-1 text-left">
-                      <h3 className="font-bold text-[#07192C] text-lg leading-tight mb-1">{item.title}</h3>
-                      <div className="text-slate-500 text-[13px] font-medium hidden sm:block">
-                        {item.lines.join(" • ")}
-                      </div>
-                      <div className="text-[#1E8BAA] text-xs font-bold mt-1 uppercase tracking-wide">
-                        {item.cta} &rarr;
-                      </div>
+                    <div>
+                      <h3 className="font-bold text-[#07192C] text-lg leading-tight">Asesoría en Seguros</h3>
+                      <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider">Atención Especializada</p>
                     </div>
-                  </a>
-                ))}
+                  </div>
+
+                  <div className="grid gap-3">
+                    <a href="tel:+51997239181" className="group bg-white rounded-2xl p-4 border-2 border-slate-100 shadow-sm flex items-center gap-4 hover:-translate-y-1 transition-all hover:border-[#2563EB]/30">
+                      <div className="w-10 h-10 rounded-xl bg-[#2563EB] shadow-md flex items-center justify-center flex-shrink-0">
+                        <Phone className="h-5 w-5 text-white" strokeWidth={2.5} />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-slate-500 text-[11px] font-bold uppercase tracking-tight leading-none mb-1">Llamar ahora</p>
+                        <p className="font-bold text-[#07192C] text-base">997 239 181</p>
+                      </div>
+                    </a>
+
+                    <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="group bg-white rounded-2xl p-4 border-2 border-slate-100 shadow-sm flex items-center gap-4 hover:-translate-y-1 transition-all hover:border-[#059669]/30">
+                      <div className="w-10 h-10 rounded-xl bg-[#059669] shadow-md flex items-center justify-center flex-shrink-0">
+                        <MessageCircle className="h-5 w-5 text-white" strokeWidth={2.5} />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-slate-500 text-[11px] font-bold uppercase tracking-tight leading-none mb-1">WhatsApp 24/7</p>
+                        <p className="font-bold text-[#07192C] text-base">997 239 181</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Inmobiliaria Area */}
+                <div className="space-y-4 pt-2 border-t border-slate-100">
+                  <div className="flex items-center gap-3 mb-2 pt-4">
+                    <div className="w-10 h-10 rounded-xl bg-[#1E8BAA]/10 flex items-center justify-center">
+                      <Building2 className="h-5 w-5 text-[#1E8BAA]" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-[#07192C] text-lg leading-tight">Gestión Inmobiliaria</h3>
+                      <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider">Solvencia de éxito</p>
+                    </div>
+                  </div>
+
+                  <div className="grid gap-3">
+                    <a href="tel:+51959143148" className="group bg-white rounded-2xl p-4 border-2 border-slate-100 shadow-sm flex items-center gap-4 hover:-translate-y-1 transition-all hover:border-[#1E8BAA]/30">
+                      <div className="w-10 h-10 rounded-xl bg-[#1E8BAA] shadow-md flex items-center justify-center flex-shrink-0">
+                        <Phone className="h-5 w-5 text-white" strokeWidth={2.5} />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-slate-500 text-[11px] font-bold uppercase tracking-tight leading-none mb-1">Llamar ahora</p>
+                        <p className="font-bold text-[#07192C] text-base">959 143 148</p>
+                      </div>
+                    </a>
+
+                    <a href={WA_INMOBILIARIA} target="_blank" rel="noopener noreferrer" className="group bg-white rounded-2xl p-4 border-2 border-slate-100 shadow-sm flex items-center gap-4 hover:-translate-y-1 transition-all hover:border-[#059669]/30">
+                      <div className="w-10 h-10 rounded-xl bg-[#059669] shadow-md flex items-center justify-center flex-shrink-0">
+                        <MessageCircle className="h-5 w-5 text-white" strokeWidth={2.5} />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-slate-500 text-[11px] font-bold uppercase tracking-tight leading-none mb-1">WhatsApp Inmobiliaria</p>
+                        <p className="font-bold text-[#07192C] text-base">959 143 148</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Right Column: Google Maps Iframe */}
@@ -1021,23 +1060,78 @@ export default function Index() {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.6963283256958!2d-77.06583999999999!3d-12.064414999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c924bcada191%3A0xe53a3db183aa639!2sC.%20Eleazar%20Blanco%20326%2C%20Pueblo%20Libre%2015084!5e0!3m2!1ses-419!2spe!4v1709581834273!5m2!1ses-419!2spe"
                   width="100%"
                   height="100%"
-                  className="rounded-[24px] flex-1 min-h-[400px] border-0 filter opacity-90 transition-all duration-700 group-hover:opacity-100 grayscale-[10%]"
-                  allowFullScreen={false}
+                  style={{ border: 0, flexGrow: 1, borderRadius: "20px" }}
+                  allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Oficina Vadillo Broker - Google Maps"
+                  title="Oficina Vadillo Broker"
+                  className="grayscale opacity-90 group-hover:grayscale-0 transition-all duration-700"
                 ></iframe>
+              </div>
+            </div>
+
+            {/* Email Form Dedicated Section */}
+            <div className="w-full max-w-5xl mx-auto bg-[#07192C] rounded-[32px] sm:rounded-[48px] p-6 sm:p-12 lg:p-14 mb-12 relative overflow-hidden shadow-2xl flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+              {/* Background decors */}
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#40B8CE]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/3 translate-x-1/3" />
+              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#1E8BAA]/10 rounded-full blur-[80px] pointer-events-none translate-y-1/3 -translate-x-1/3" />
+              <div className="absolute inset-0 dot-pattern opacity-[0.04] pointer-events-none mix-blend-screen" />
+
+              {/* Form Intro/Trust Badge */}
+              <div className="lg:w-5/12 w-full relative z-10 text-center lg:text-left">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#40B8CE] to-[#1E8BAA] flex items-center justify-center shadow-lg shadow-[#40B8CE]/30 mb-6 sm:mb-8 mx-auto lg:mx-0 transform -rotate-3">
+                  <Mail className="h-8 w-8 text-white" strokeWidth={2} />
+                </div>
+                <h3 className="font-bold text-white text-3xl sm:text-4xl mb-4 sm:mb-5 leading-tight tracking-tight">Escríbenos al <br className="hidden lg:block" />Correo Directo</h3>
+                <p className="text-[#94A3B8] text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8">
+                  Si prefieres el correo, déjanos tus datos. Un asesor ejecutivo atenderá tu solicitud con absoluta prioridad y confidencialidad.
+                </p>
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-[#40B8CE] text-xs sm:text-sm font-semibold shadow-inner">
+                  <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" /> Protección 100% Segura
+                </div>
+              </div>
+
+              {/* Form Inputs */}
+              <div className="lg:w-7/12 w-full relative z-10">
+                <form action="https://api.web3forms.com/submit" method="POST" className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {/* Web3Forms Access Key */}
+                  <input type="hidden" name="access_key" value="77819f08-3ded-4c2d-b273-25e6e7f9bd54" />
+
+                  {/* Web3Forms Configuration */}
+                  <input type="hidden" name="subject" value="Nuevo correo urgente desde Vadillo Web" />
+                  <input type="hidden" name="from_name" value="Vadillo Broker Contacto" />
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+                  {/* Para que redireccione devuelta a la web tras enviar en vez de otra página */}
+                  <input type="hidden" name="redirect" value="https://vadillobroker.com" />
+
+                  <div className="md:col-span-1">
+                    <input type="text" name="Nombre" placeholder="¿Cómo te llamas?" required
+                      className="w-full bg-[#0D2A48]/50 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-4 text-base text-white placeholder-slate-400 outline-none focus:ring-2 focus:ring-[#40B8CE]/50 focus:border-[#40B8CE] transition-all" />
+                  </div>
+                  <div className="md:col-span-1">
+                    <input type="email" name="Email" placeholder="Tu correo electrónico" required
+                      className="w-full bg-[#0D2A48]/50 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-4 text-base text-white placeholder-slate-400 outline-none focus:ring-2 focus:ring-[#40B8CE]/50 focus:border-[#40B8CE] transition-all" />
+                  </div>
+                  <div className="md:col-span-2">
+                    <input type="tel" name="Telefono" placeholder="¿A qué número te llamamos? (Ej: 987654321)" required pattern="[0-9]{9}" maxLength={9} minLength={9} title="Debe ingresar exactamente 9 dígitos numéricos"
+                      className="w-full bg-[#0D2A48]/50 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-4 text-base text-white placeholder-slate-400 outline-none focus:ring-2 focus:ring-[#40B8CE]/50 focus:border-[#40B8CE] transition-all" />
+                  </div>
+                  <div className="md:col-span-2">
+                    <textarea name="Mensaje" placeholder="Detalla tu consulta aquí..." required rows={4}
+                      className="w-full bg-[#0D2A48]/50 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-4 text-base text-white placeholder-slate-400 outline-none focus:ring-2 focus:ring-[#40B8CE]/50 focus:border-[#40B8CE] transition-all resize-none"></textarea>
+                  </div>
+                  <div className="md:col-span-2 mt-3">
+                    <Button type="submit" className="w-full sm:w-auto px-10 bg-[#40B8CE] hover:bg-[#7DD8E8] hover:text-[#07192C] text-white font-extrabold text-base h-14 rounded-2xl transition-all shadow-xl shadow-[#40B8CE]/20 hover:scale-[1.02] hover:-translate-y-1">
+                      Enviar <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </div>
+                </form>
               </div>
             </div>
 
             <div className="bg-white rounded-full p-6 sm:p-8 border-2 border-slate-100 shadow-sm text-center max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 hover:border-[#1E8BAA]/20 transition-colors">
               <span className="bg-[#07192C] text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">Web Oficial</span>
-              <a
-                href="https://www.vadillobroker.com"
-                className="text-[#07192C] font-extrabold text-lg sm:text-xl hover:text-[#1E8BAA] transition-colors tracking-tight"
-              >
-                www.vadillobroker.com
-              </a>
+              <a href="https://www.vadillobroker.com" target="_blank" rel="noopener noreferrer" className="text-xl sm:text-2xl font-black text-[#07192C] hover:text-[#1E8BAA] transition-colors inline-block mt-2 sm:mt-0 tracking-tight">www.vadillobroker.com</a>
             </div>
           </div>
         </section>
@@ -1061,7 +1155,7 @@ export default function Index() {
               <span className="text-white drop-shadow-sm">lo que más amas?</span>
             </h2>
             <p className="text-white/90 max-w-2xl mx-auto mb-12 text-lg md:text-xl leading-relaxed font-semibold">
-              No dejes para mañana la protección que tu familia necesita hoy. Empieza con una asesoría profesional, honesta y experta.
+              No dejes para mañana la protección que tu familia necesita hoy. Empieza con una asesoría profesional, cálida y experta.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
               <Button
@@ -1107,7 +1201,7 @@ export default function Index() {
                 </div>
               </a>
               <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
-                Especialista independiente con más de dos décadas de experiencia acompañando familias y empresas en el mercado peruano.
+                Broker independiente con más de dos décadas de experiencia acompañando familias y empresas en el mercado peruano.
               </p>
               {/* Review stars */}
               <div className="flex items-center gap-3 bg-white/5 w-fit px-4 py-2 rounded-full border border-white/5">
@@ -1149,22 +1243,23 @@ export default function Index() {
               </h3>
               <ul className="space-y-3.5 text-slate-400 text-sm font-medium" aria-label="Lista de servicios">
                 {[
-                  "Seguro Vehicular",
-                  "Seguro de Salud",
-                  "Seguro de Vida",
-                  "Seguro de Hogar",
-                  "Desgravamen Hipotecario",
-                  "Asesoría Inmobiliaria Lima",
+                  { label: "Seguro Vehicular", href: WHATSAPP },
+                  { label: "Seguro de Salud", href: WHATSAPP },
+                  { label: "Seguro Oncológico", href: WHATSAPP },
+                  { label: "Seguro de Vida", href: WHATSAPP },
+                  { label: "Seguro de Hogar", href: WHATSAPP },
+                  { label: "Desgravamen Hipotecario", href: WHATSAPP },
+                  { label: "Asesoría Inmobiliaria en Lima Top", href: WA_INMOBILIARIA },
                 ].map((s) => (
-                  <li key={s}>
+                  <li key={s.label}>
                     <a
-                      href={WHATSAPP}
+                      href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-white transition-colors flex items-center gap-2 group"
                     >
                       <ChevronRight className="h-3.5 w-3.5 text-[#1E8BAA] group-hover:translate-x-1 transition-transform" />
-                      {s}
+                      {s.label}
                     </a>
                   </li>
                 ))}
@@ -1181,13 +1276,13 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#1E8BAA] transition-colors">
                     <Phone className="h-4 w-4 text-white" />
                   </div>
-                  997 239 181
+                  <span>997 239 181 <span className="text-[11px] text-slate-500 font-semibold">SEGUROS</span></span>
                 </a>
-                <a href="tel:+51995431138" className="flex items-center gap-3 hover:text-white transition-colors group">
+                <a href="tel:+51959143148" className="flex items-center gap-3 hover:text-white transition-colors group">
                   <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#1E8BAA] transition-colors">
                     <Phone className="h-4 w-4 text-white" />
                   </div>
-                  995 431 138
+                  <span>959 143 148 <span className="text-[11px] text-slate-500 font-semibold">INMOBILIARIA</span></span>
                 </a>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -1212,7 +1307,7 @@ export default function Index() {
             <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/5">
               <Shield className="h-4 w-4 text-[#1E8BAA]" />
               <p className="text-slate-400 text-[13px] font-medium">
-                Eficacia y Confianza en <strong className="text-white">Seguros e Inmobiliaria</strong>
+                Garantía y solvencia en <strong className="text-white">Seguros e Inmobiliaria</strong>
               </p>
             </div>
           </div>
