@@ -183,7 +183,7 @@ export default function Index() {
           <a href="#inicio" aria-label="VADILLOBROKER — Inicio" className="flex items-center gap-3 group">
             <img src={logoIcon} alt="Logo VADILLOBROKER" className="w-10 h-10 object-contain" loading="eager" />
             <div className="leading-tight">
-              <span className={`block text-xl md:text-[22px] font-bold tracking-tight transition-colors font-['Comfortaa'] ${scrolled ? "text-navy" : "text-white"}`}>
+              <span className={`block text-xl md:text-[22px] font-medium tracking-tight transition-colors font-['Comfortaa'] ${scrolled ? "text-navy" : "text-white"}`}>
                 Vadillobroker
               </span>
               <span className="block text-[10px] md:text-[11px] font-medium text-teal/80 tracking-wide font-['Comfortaa']">
@@ -1196,7 +1196,7 @@ export default function Index() {
                   <img src={logoIcon} alt="VADILLOBROKER" className="w-10 h-10 object-contain drop-shadow-md" loading="lazy" />
                 </div>
                 <div>
-                  <div className="text-white font-bold tracking-tight text-[22px] font-['Comfortaa']">Vadillobroker</div>
+                  <div className="text-white font-medium tracking-tight text-[22px] font-['Comfortaa']">Vadillobroker</div>
                   <div className="text-teal/80 text-[11px] tracking-wide font-medium font-['Comfortaa']">Seguros e Inmobiliaria</div>
                 </div>
               </a>
