@@ -360,7 +360,7 @@ export function BrokerProfile({ className }: { className?: string }) {
         y="46"
         width="224"
         height="224"
-        href="/fabio-vadillo.jpg"
+        href="/vadillo.png"
         clipPath="url(#avatarClip)"
         preserveAspectRatio="xMidYMid slice"
       />
