@@ -183,10 +183,10 @@ export default function Index() {
           <a href="#inicio" aria-label="VADILLOBROKER — Inicio" className="flex items-center gap-3 group">
             <img src={logoIcon} alt="Logo VADILLOBROKER" className="w-10 h-10 object-contain" loading="eager" />
             <div className="leading-tight">
-              <span className={`block text-base font-extrabold tracking-tight transition-colors ${scrolled ? "text-navy" : "text-white"}`}>
-                VADILLOBROKER
+              <span className={`block text-xl md:text-[22px] font-bold tracking-tight transition-colors font-['Comfortaa'] ${scrolled ? "text-navy" : "text-white"}`}>
+                Vadillobroker
               </span>
-              <span className="block text-[10px] font-bold text-teal tracking-widest uppercase">
+              <span className="block text-[10px] md:text-[11px] font-bold text-teal tracking-widest uppercase font-['Nunito']">
                 Seguros e Inmobiliaria
               </span>
             </div>
@@ -1196,8 +1196,8 @@ export default function Index() {
                   <img src={logoIcon} alt="VADILLOBROKER" className="w-10 h-10 object-contain drop-shadow-md" loading="lazy" />
                 </div>
                 <div>
-                  <div className="text-white font-extrabold tracking-tight text-lg">VADILLOBROKER</div>
-                  <div className="text-[#1E8BAA] text-[10px] tracking-widest font-bold uppercase">Seguros e Inmobiliaria</div>
+                  <div className="text-white font-bold tracking-tight text-[22px] font-['Comfortaa']">Vadillobroker</div>
+                  <div className="text-[#1E8BAA] text-[11px] tracking-widest font-bold uppercase font-['Nunito']">Seguros e Inmobiliaria</div>
                 </div>
               </a>
               <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
