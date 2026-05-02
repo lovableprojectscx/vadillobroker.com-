@@ -18,7 +18,7 @@ import {
   Star, Car, HeartPulse, Umbrella, Home, Shield, Tag, Search,
   CheckCircle, MapPin, Phone, MessageCircle, Heart, ChevronRight,
   FileText, BarChart3, Users, Handshake, Menu, X, ArrowRight,
-  Award, Clock, TrendingUp, Building2, Quote, Zap, Linkedin, Mail, ShieldCheck,
+  Award, Clock, TrendingUp, Building2, Quote, Zap, Linkedin, Mail, ShieldCheck, Plane,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -47,6 +47,7 @@ const WA_ONCOLOGICO = WA("¡Hola Fabio! Quisiera información sobre seguros onco
 const WA_VIDA = WA("¡Hola Fabio! Me interesa consultar sobre un seguro de vida. ¿Qué opciones tienes disponibles?");
 const WA_HOGAR = WA("¡Hola Fabio! Quisiera consultar sobre un seguro de hogar. ¿Cuáles son las coberturas que manejas?");
 const WA_INMOBILIARIA = WA_INMOB("¡Hola Fabio! Me interesa el servicio de inmobiliaria. ¿Podemos coordinar una consulta?");
+const WA_VIAJES = WA("¡Hola Fabio! Quisiera información sobre el seguro de viajes. ¿Cuáles son las coberturas?");
 const WA_CONTACTO = WA("¡Hola Fabio! Me comunico desde tu web. Quisiera recibir más información sobre tus servicios.");
 
 // Mapa de mensajes por servicio para los botones individuales
@@ -56,6 +57,7 @@ const WA_SERVICIOS: Record<string, string> = {
   "Seguro Oncológico": WA_ONCOLOGICO,
   "Seguro de Vida": WA_VIDA,
   "Seguro de Hogar": WA_HOGAR,
+  "Seguro de Viajes": WA_VIAJES,
 };
 
 
@@ -75,6 +77,7 @@ const SERVICES = [
   { icon: HeartPulse, title: "Seguro Oncológico", desc: "Planes preventivos especializados, con chequeos médicos y hasta 100% de cobertura.", color: "from-pink-500 to-pink-700", bg: "bg-pink-50", border: "hover:border-pink-200", tag: "" },
   { icon: Umbrella, title: "Seguro de Vida", desc: "Garantiza tu futuro económico y el de tus seres queridos ante cualquier eventualidad.", color: "from-violet-500 to-violet-700", bg: "bg-violet-50", border: "hover:border-violet-200", tag: "" },
   { icon: Home, title: "Seguro de Hogar", desc: "Cobertura completa contra todo riesgo para proteger tu patrimonio e inmueble.", color: "from-emerald-500 to-emerald-700", bg: "bg-emerald-50", border: "hover:border-emerald-200", tag: "" },
+  { icon: Plane, title: "Seguro de Viajes", desc: "Tranquilidad sin fronteras, con asistencia médica, protección de equipaje y/o respaldo ante cancelaciones, ¡Que tu única preocupación sea disfrutar!", color: "from-amber-500 to-orange-700", bg: "bg-amber-50", border: "hover:border-amber-200", tag: "" },
 ];
 
 const ABOUT_FEATURES = [
