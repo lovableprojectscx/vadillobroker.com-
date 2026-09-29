@@ -87,7 +87,7 @@ export function ShieldIllustration({ className }: { className?: string }) {
       <rect x="158" y="334" width="164" height="52" rx="26" fill={TEAL_MID} />
       <rect x="158" y="334" width="164" height="52" rx="26" fill="none" stroke={TEAL_GLOW} strokeWidth="1" opacity="0.4" />
       <text x="240" y="350" textAnchor="middle" fill="white" fontSize="8" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" letterSpacing="1.5">CORREDOR OFICIAL</text>
-      <text x="240" y="365" textAnchor="middle" fill={TEAL_GLOW} fontSize="7.5" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="0.8">SBS N°4503</text>
+      <text x="240" y="365" textAnchor="middle" fill={TEAL_GLOW} fontSize="7.5" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="0.8">SBS N4503</text>
       <text x="240" y="378" textAnchor="middle" fill={TEAL_GLOW} fontSize="7.5" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="700" letterSpacing="0.8">MVCS PN13793</text>
 
       {/* ═══ TOP LEFT — SOAT / Vehicular ═══ */}

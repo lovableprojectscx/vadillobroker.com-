@@ -29,7 +29,6 @@ import {
   ShieldIllustration,
   SavingsIllustration,
   BuildingIllustration,
-  BrokerProfile,
 } from "@/components/Illustrations";
 
 /* ─────────────── Constants ─────────────── */
@@ -308,22 +307,22 @@ export default function Index() {
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-1.5 text-white/90 text-[10px] md:text-[11px] font-bold tracking-widest uppercase mb-6 md:mb-8 hero-animate">
                 <span className="w-1.5 h-1.5 rounded-full bg-teal shadow-[0_0_8px_rgba(20,184,166,0.8)] animate-pulse" />
-                Experiencia que respalda, atención que acompaña
+                Experiencia que acompaña
               </div>
 
               <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-[54px] font-bold text-white leading-tight mb-5 md:mb-6 tracking-tight hero-animate hero-animate-delay-1">
-                Tu patrimonio merece<br />
+                Tu futuro,<br />
+                bien asegurado<br />
                 <span className="text-teal font-extrabold relative inline-block">
-                  atención directa,
+                  Atención directa, 24/7
                   <svg className="absolute w-full h-2 md:h-3 -bottom-1 left-0 text-teal/30" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                   </svg>
-                </span><br />
-                no un call center.
+                </span>
               </h1>
 
               <p className="text-slate-300 text-base md:text-lg mb-8 md:mb-10 leading-relaxed font-normal hero-animate hero-animate-delay-2">
-                <strong className="text-white font-medium">Enfoque estrictamente personalizado:</strong> atiendo a una cartera limitada de clientes, garantizando una gestión dedicada y la defensa de tus intereses.
+                <strong className="text-white font-medium">Administramos</strong> una cartera limitada de clientes, garantizando una gestión dedicada y la defensa de tus intereses.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10 md:mb-14 hero-animate hero-animate-delay-3">
@@ -411,7 +410,7 @@ export default function Index() {
         <section aria-label="Aseguradoras con las que trabajamos" className="py-10 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-6">
             <p className="text-center text-[10px] sm:text-[11px] font-extrabold tracking-widest text-[#94A3B8] uppercase mb-6">
-              Las mejores aseguradoras del Perú para ti
+              Las mejores compañías de seguros, clínicas y GPS para ti
             </p>
             {/* Marquee Container */}
             <div className="relative flex overflow-hidden w-full group mask-image-linear">
@@ -480,7 +479,7 @@ export default function Index() {
                   </div>
 
                   {/* AUGUSTAR — Logo desde URL proporcionada con SVG fallback */}
-                  <div className="flex items-center gap-2 group/logo cursor-default pr-4 sm:pr-8">
+                  <div className="flex items-center gap-2 group/logo cursor-default">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover/logo:border-[#F15A24]/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-50 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1 relative">
                       <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZLnDxG8VsCfSWKmKgiplUy4h9p_dTetVJew&s"
@@ -502,6 +501,45 @@ export default function Index() {
                     </div>
                     <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover/logo:text-navy transition-colors duration-300 tracking-wide">AUGUSTAR</span>
                   </div>
+
+                  {/* HUNTER — GPS */}
+                  <div className="flex items-center gap-2 group/logo cursor-default">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover/logo:border-red-500/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-60 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1">
+                      <img
+                        src="/hunter.svg"
+                        alt="Hunter GPS y Monitoreo en Lima Perú — Vadillo Broker"
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                    <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover/logo:text-navy transition-colors duration-300 tracking-wide">HUNTER</span>
+                  </div>
+
+                  {/* PROTEMAX — GPS */}
+                  <div className="flex items-center gap-2 group/logo cursor-default">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover/logo:border-teal/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-60 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1">
+                      <img
+                        src="/protemax.svg"
+                        alt="Protemax Seguridad y GPS en Lima Perú — Vadillo Broker"
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                    <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover/logo:text-navy transition-colors duration-300 tracking-wide">PROTEMAX</span>
+                  </div>
+
+                  {/* COMSATEL — GPS */}
+                  <div className="flex items-center gap-2 group/logo cursor-default pr-4 sm:pr-8">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover/logo:border-red-500/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-60 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1">
+                      <img
+                        src="/comsatel.svg"
+                        alt="Comsatel Monitoreo Satelital y GPS en Lima Perú — Vadillo Broker"
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                    <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover/logo:text-navy transition-colors duration-300 tracking-wide">COMSATEL</span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -513,9 +551,88 @@ export default function Index() {
         ══════════════════════════════════════ */}
         <section id="nosotros" aria-labelledby="nosotros-heading" className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Left — Profile illustration */}
+            {/* Left — Executive Profile Card */}
             <div className="flex justify-center">
-              <BrokerProfile className="w-full max-w-sm drop-shadow-xl" />
+              <div className="relative group max-w-[440px] w-full">
+                {/* Ambient glow */}
+                <div className="absolute -inset-3 bg-gradient-to-tr from-teal/25 via-[#1E8BAA]/15 to-[#0D2A48]/30 rounded-[38px] blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                {/* Main Card Container */}
+                <div className="relative rounded-[32px] overflow-hidden bg-[#07192C] border-2 border-teal/30 shadow-[0_20px_50px_rgba(7,25,44,0.35)]">
+                  
+                  {/* Photo with Overlay */}
+                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#0A1F35]">
+                    <img
+                      src="/fabio-vadillo.webp"
+                      alt="Fabio Vadillo — Broker de Seguros e Inmobiliaria en Lima Perú"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+
+                    {/* Gradient shadows */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#07192C] via-[#07192C]/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#07192C]/40 via-transparent to-transparent" />
+
+                    {/* Floating Top Badges */}
+                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                      <div className="inline-flex items-center gap-2 bg-[#07192C]/80 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full shadow-lg">
+                        <span className="w-2 h-2 rounded-full bg-teal shadow-[0_0_8px_rgba(20,184,166,1)] animate-pulse" />
+                        <span className="text-white text-[11px] font-extrabold tracking-wider">SBS N4503</span>
+                      </div>
+
+                      <div className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg">
+                        <ShieldCheck className="w-3.5 h-3.5 text-teal" />
+                        <span className="text-[#0D2A48] text-[10px] font-black tracking-wider uppercase">Verificado</span>
+                      </div>
+                    </div>
+
+                    {/* Bottom Card Identity */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-none mb-1">
+                        Fabio Vadillo
+                      </h3>
+                      <p className="text-teal font-extrabold text-xs sm:text-sm tracking-wider uppercase mb-4">
+                        Broker de Seguros e Inmobiliaria
+                      </p>
+
+                      {/* Floating Key Metrics */}
+                      <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/15">
+                        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10">
+                          <div className="text-xl sm:text-2xl font-black text-white leading-tight">20+</div>
+                          <div className="text-[10px] font-bold text-slate-300 uppercase tracking-wider">Años de Trayectoria</div>
+                        </div>
+                        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/10">
+                          <div className="text-xl sm:text-2xl font-black text-teal leading-tight">+200</div>
+                          <div className="text-[10px] font-bold text-slate-300 uppercase tracking-wider">Familias Protegidas</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Card Action Footer */}
+                  <div className="bg-[#0A1F35] px-6 py-4 border-t border-white/10 flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <span className="relative flex h-2.5 w-2.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#25D366]" />
+                      </span>
+                      <span className="text-white/90 text-xs font-semibold">Atención directa sin call center</span>
+                    </div>
+
+                    <a
+                      href={WHATSAPP}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-extrabold text-teal hover:text-white transition-colors group/link"
+                      aria-label="Contactar a Fabio Vadillo por WhatsApp"
+                    >
+                      <span>Hablar</span>
+                      <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5" />
+                    </a>
+                  </div>
+
+                </div>
+              </div>
             </div>
 
             {/* Right — Content */}
@@ -525,7 +642,7 @@ export default function Index() {
                 Sobre Nosotros
               </span>
               <h2 id="nosotros-heading" className="text-4xl md:text-5xl font-extrabold text-navy mb-6 leading-tight">
-                Asesoría <span className="text-teal">Estratégica</span>, no masiva
+                Asesoría <span className="text-teal">Real</span>, no masiva
               </h2>
               <p className="text-gray-500 mb-4 leading-relaxed">
                 Con <strong className="text-navy">20 años de trayectoria</strong> en el sector financiero peruano, entiendo que la verdadera protección requiere dedicación personal. Por eso, desde{" "}
@@ -537,7 +654,7 @@ export default function Index() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
                 {[
-                  { icon: Award, label: "Corredor Certificado", sublabel: "SBS N°4503 / MVCS PN13793", colorClass: "bg-[#1E8BAA]", borderClass: "border-[#1E8BAA]/20 hover:border-[#1E8BAA]/60 hover:bg-[#1E8BAA]/5" },
+                  { icon: Award, label: "Corredor Certificado", sublabel: "SBS N4503 / MVCS PN13793", colorClass: "bg-[#1E8BAA]", borderClass: "border-[#1E8BAA]/20 hover:border-[#1E8BAA]/60 hover:bg-[#1E8BAA]/5" },
                   { icon: Clock, label: "Sin costo extra", sublabel: "Se cobra a la aseguradora", colorClass: "bg-[#2563EB]", borderClass: "border-[#2563EB]/20 hover:border-[#2563EB]/60 hover:bg-[#2563EB]/5" },
                   { icon: TrendingUp, label: "100% Independiente", sublabel: "Se trabaja para ti", colorClass: "bg-[#059669]", borderClass: "border-[#059669]/20 hover:border-[#059669]/60 hover:bg-[#059669]/5" },
                   { icon: Shield, label: "+20 Años de Experiencia", sublabel: "+10 Aseguradoras", colorClass: "bg-[#7C3AED]", borderClass: "border-[#7C3AED]/20 hover:border-[#7C3AED]/60 hover:bg-[#7C3AED]/5" },
