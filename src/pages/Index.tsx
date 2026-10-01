@@ -529,7 +529,7 @@ export default function Index() {
                   </div>
 
                   {/* COMSATEL — GPS */}
-                  <div className="flex items-center gap-2 group/logo cursor-default pr-4 sm:pr-8">
+                  <div className="flex items-center gap-2 group/logo cursor-default">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white flex items-center justify-center shadow-sm border border-gray-100 group-hover/logo:border-red-500/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-60 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0 overflow-hidden rounded-md p-1">
                       <img
                         src="/comsatel.svg"
@@ -539,6 +539,18 @@ export default function Index() {
                       />
                     </div>
                     <span className="text-base sm:text-lg font-extrabold text-[#94A3B8] group-hover/logo:text-navy transition-colors duration-300 tracking-wide">COMSATEL</span>
+                  </div>
+
+                  {/* CÁMARA DE COMERCIO DE LIMA — EMPRESA ASOCIADA */}
+                  <div className="flex items-center gap-2 group/logo cursor-default pr-4 sm:pr-8">
+                    <div className="h-9 sm:h-11 flex items-center justify-center bg-white px-3 py-1 rounded-xl border border-gray-100 shadow-sm group-hover/logo:border-[#2D4B71]/30 group-hover/logo:shadow-md transition-all duration-300 grayscale opacity-70 group-hover/logo:grayscale-0 group-hover/logo:opacity-100 flex-shrink-0">
+                      <img
+                        src="/sello-ccl.svg"
+                        alt="Empresa Asociada — Cámara de Comercio de Lima"
+                        className="h-6 sm:h-7 w-auto object-contain"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -672,6 +684,29 @@ export default function Index() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* CCL Institutional Endorsement Card */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#F0F5FA] to-white border border-[#2D4B71]/15 shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-4 transition-all duration-300 hover:shadow-md hover:border-[#2D4B71]/30">
+                <div className="flex-shrink-0 bg-white p-3 rounded-xl border border-gray-100 shadow-sm flex items-center justify-center">
+                  <img
+                    src="/sello-ccl.svg"
+                    alt="Empresa Asociada — Cámara de Comercio de Lima"
+                    className="h-11 sm:h-12 w-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="text-center sm:text-left flex-1">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1.5">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-[#0074C5] bg-[#0074C5]/10 px-2 py-0.5 rounded-md">
+                      Respaldo Gremial
+                    </span>
+                    <span className="text-xs font-bold text-[#2D4B71]">Cámara de Comercio de Lima</span>
+                  </div>
+                  <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                    Empresa Asociada formalmente acreditada ante la <strong className="text-navy">Cámara de Comercio de Lima (CCL)</strong>, garantizando los más altos estándares de solidez, ética y transparencia empresarial.
+                  </p>
+                </div>
               </div>
 
 
@@ -1321,14 +1356,25 @@ export default function Index() {
               <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
                 Broker independiente con más de dos décadas de experiencia acompañando familias y empresas en el mercado peruano.
               </p>
-              {/* Review stars */}
-              <div className="flex items-center gap-3 bg-white/5 w-fit px-4 py-2 rounded-full border border-white/5">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-[#FCD34D] text-[#FCD34D]" />
-                  ))}
+              {/* Review stars + CCL Institutional Badge */}
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-3 bg-white/5 w-fit px-4 py-2 rounded-full border border-white/5">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-3.5 w-3.5 fill-[#FCD34D] text-[#FCD34D]" />
+                    ))}
+                  </div>
+                  <span className="text-white/70 text-xs font-semibold">+200 familias</span>
                 </div>
-                <span className="text-white/70 text-xs font-semibold">+200 familias</span>
+
+                <div className="flex items-center bg-white/5 hover:bg-white/10 px-3.5 py-1.5 rounded-full border border-white/10 transition-colors">
+                  <img
+                    src="/sello-ccl-negativo.svg"
+                    alt="Empresa Asociada — Cámara de Comercio de Lima"
+                    className="h-6 w-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
               </div>
 
               {/* Social Links */}
@@ -1422,11 +1468,21 @@ export default function Index() {
             <p className="text-slate-500 text-[13px] text-center md:text-left font-medium">
               © {new Date().getFullYear()} Fabio Vadillo — Seguros e Inmobiliaria. Todos los derechos reservados.
             </p>
-            <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/5">
-              <Shield className="h-4 w-4 text-[#1E8BAA]" />
-              <p className="text-slate-400 text-[13px] font-medium">
-                Garantía y solvencia en <strong className="text-white">Seguros e Inmobiliaria</strong>
-              </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/5">
+                <Shield className="h-4 w-4 text-[#1E8BAA]" />
+                <p className="text-slate-400 text-[13px] font-medium">
+                  Corredor Certificado <strong className="text-white">SBS N4503</strong> · MVCS PN13793
+                </p>
+              </div>
+              <div className="flex items-center px-3.5 py-1.5 bg-white/5 rounded-xl border border-white/5">
+                <img
+                  src="/sello-ccl-negativo.svg"
+                  alt="Cámara de Comercio de Lima — Empresa Asociada"
+                  className="h-5 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
